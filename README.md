@@ -1,1 +1,1 @@
-A Research Capstone school Project, developed by a student. This is for educational purposes only.
+A Research Capstone school Project, currently developing by a student. This is for educational purposes only.
