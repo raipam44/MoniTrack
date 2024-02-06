@@ -23,11 +23,6 @@
 {% endblock %}
 
 
-
-
-
-
-
 {% block content %}
   <!-- {% if user.is_authenticated %}
     <h1>Hello {{ user.username }}</h1>
@@ -39,6 +34,9 @@
   
   <a href= "/logout" >Log Out </a> -->
   
+
+
+  <div class="information-container">
 
     <section class="user-information">
 
@@ -62,10 +60,20 @@
 
     <section class="login-information">
 
-      <div class="login-details-container"></div>
+      <div class="login-details-container">
+
+        <h3>LOG-IN DETAILS:</h3>
+
+        <div class="login-wrapper">
+          <h5 class="login-details"></h5>
+          <h5 class="login-details"></h5>
+          <h5 class="login-details"></h5>
+          
+        </div>
+      </div>
 
     </section>
   
-
+  </div>
 
 {% endblock %}
