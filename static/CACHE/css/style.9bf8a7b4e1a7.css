@@ -1,0 +1,130 @@
+/* line 1, main/static/main/style.css */
+.tagline {
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: black;
+  font-size: 1.5rem;
+  text-align: center;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  padding: 50px; }
+
+/* line 13, main/static/main/style.css */
+body {
+  margin: 0;
+  text-rendering: optimizeSpeed; }
+
+/* line 18, main/static/main/style.css */
+html {
+  scroll-behavior: smooth; }
+
+/* line 22, main/static/main/style.css */
+*,
+:after,
+:before {
+  box-sizing: border-box; }
+
+/* line 28, main/static/main/style.css */
+.logo-text {
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25098);
+  background: var(--Blue-Green, linear-gradient(90deg, #01ff55 25%, #028ce7 100%));
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Outfit-ExtraBold", Helvetica;
+  font-weight: 800;
+  color: transparent;
+  font-size: 4.5rem;
+  text-align: center; }
+
+/* line 41, main/static/main/style.css */
+.btn {
+  font-family: "Outfit-Bold", Helvetica;
+  font-weight: 600;
+  color: #1e1e1e;
+  font-size: 1.75rem;
+  padding: 20px 40px 20px 40px;
+  border-radius: 100px;
+  max-width: 275px;
+  max-height: 100px;
+  background: white;
+  border: none;
+  width: 200px; }
+
+/* line 55, main/static/main/style.css */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; }
+
+/* line 61, main/static/main/style.css */
+.btn-primary {
+  background-color: #50c878;
+  transition: background-color 10ms ease-in-out; }
+
+/* line 66, main/static/main/style.css */
+.btn-primary:hover {
+  background-color: transparent;
+  color: #1e1e1e;
+  border: 3px solid #006fb9; }
+
+/* line 72, main/static/main/style.css */
+.btn-secondary {
+  border: 3px solid #006fb9;
+  transition: background-color 10ms ease-in-out; }
+
+/* line 77, main/static/main/style.css */
+.btn-secondary:hover {
+  border: none;
+  background-color: #50c878; }
+
+/* line 82, main/static/main/style.css */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+/* line 89, main/static/main/style.css */
+#monitrack-logo-1 {
+  margin: 40px 10px 20px 10px; }
+
+/* line 93, main/static/main/style.css */
+.container-fluid .btn-secondary {
+  display: flex;
+  width: 100px;
+  height: 50px;
+  text-wrap: nowrap;
+  align-items: center;
+  justify-content: center; }
+
+/* line 102, main/static/main/style.css */
+#main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+/* line 109, main/static/main/style.css */
+.tagline #monitors-text {
+  color: #50c878; }
+
+/* line 112, main/static/main/style.css */
+.tagline #tracks-text {
+  color: #006fb9; }
+
+/* line 116, main/static/main/style.css */
+.signup-container {
+  margin-top: 100px; }
+
+/* line 120, main/static/main/style.css */
+.user-nav-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  background-color: red;
+  font-size: 1rem; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %} {% block content %}
+<!-- <img
+  class="img-fluid"
+  src="/assets/MoniTrack Logo.png"
+  alt="MoniTrack Logo"
+  id="monitrack-logo-1"
+/> -->
+<div class="container">
+  <h1 class="logo-text">MoniTrack</h1>
+  <div class="tagline">
+    <p><span id="monitors-text">Monitors</span> your security</p>
+    <p><span id="tracks-text">Tracks </span>your Progress</p>
+  </div>
+
+  <div class="btn-container">
+    <a href="{% url 'login' %}">
+      <button type="button" class="btn btn-secondary" name="log-in-btn">
+        Log In
+      </button></a
+    >
+
+    <a href="{% url 'sign_up' %}"
+      ><button type="button" class="btn btn-primary" name="register-btn">
+        Sign Up
+      </button>
+    </a>
+  </div>
+</div>
+
+{% endblock %}

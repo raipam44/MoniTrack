@@ -1,0 +1,109 @@
+{% extends 'home/base.html' %} {% block content %}
+<div class="container-md d-flex align-items-center justify-content-center mt-5">
+  <form
+    class="row g-7 w-50"
+    method="POST"
+    action="{% url 'sign_up'%}"
+    id="register-form"
+  >
+    {% csrf_token %}
+    <div class="col-md-6 form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="first_name"
+        placeholder="First Name"
+        name="first_name"
+        {{form.first_name.attr}}
+      />
+      <label for="floatingInput"> First Name</label>
+      <p>{{form.first_name.errors}}</p>
+    </div>
+    <div class="col-md-6 form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="inputLastName"
+        placeholder="Last Name"
+        name="last_name"
+        {{form.last_name.attr}}
+      />
+      <label for="floatingInput">Last Name</label>
+      <p>{{form.last_name.errors}}</p>
+    </div>
+    <div class="col-12 form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="inputUsername"
+        placeholder="Student Number"
+        name="username"
+        {{form.username.attr}}
+      />
+      <label for="floatingInput" class="form-label">Username</label>
+      <p>{{form.username.errors}}</p>
+    </div>
+    <div class="form-floating">
+      <select
+        class="form-select"
+        id="floatingSelect"
+        aria-label="Floating label select example"
+        name="section"
+        {{form.section.attr}}
+      >
+        <option value="C1">C1</option>
+        <option value="C2">C2</option>
+        <option value="C3">C3</option>
+        <option value="C4">C4</option>
+        <option value="C5">C5</option>
+        <option value="C6">C6</option>
+        <option value="C7">C7</option>
+        <option value="C8">C8</option>
+      </select>
+      <label for="floatingSelect">Sections</label>
+      <p>{{form.section.errors}}</p>
+    </div>
+    <div class="col-12 form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="inputStudentNumber"
+        placeholder="Student Number"
+        name="student_number"
+        {{form.student_number.attr}}
+      />
+      <label for="flaotingInput" class="form-label">Student Number</label>
+      <p>{{form.student_number.errors}}</p>
+    </div>
+    <div class="col-12 form-floating mb-3">
+      <input
+        type="password"
+        class="form-control"
+        id="inputPassword"
+        placeholder="Password"
+        name="password1"
+        {{form.password1.attr}}
+      />
+      <label for="flaotingInput" class="form-label">Password</label>
+      <p>{{form.password1.errors}}</p>
+    </div>
+    <div class="col-12 form-floating mb-3">
+      <input
+        type="password"
+        class="form-control"
+        id="inputConfirmPassword"
+        placeholder="Confirm Password"
+        name="password2"
+        {{form.password2.attr}}
+      />
+      <label for="flaotingInput" class="form-label">Confirm Password</label>
+      <p>{{form.password2.errors}}</p>
+    </div>
+
+    <div class="col-12 mt-4">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

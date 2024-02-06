@@ -1,0 +1,71 @@
+{% extends 'home/base.html' %} 
+{% block title %} 
+  {% if user.is_authenticated %}
+    {{ user.username }}
+  {% else %}
+    MoniTrack
+  {% endif %}
+{% endblock %} 
+
+
+{% block nav_bar %} 
+
+
+  <div class="container user-nav-bar">
+    <h1 class="logo-text">MoniTrack</h1>
+    <div class="tagline">
+      <p><span id="monitors-text">Monitors</span> your security</p>
+      <p><span id="tracks-text">Tracks </span>your Progress</p>
+    </div>
+
+  </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+{% block content %}
+  <!-- {% if user.is_authenticated %}
+    <h1>Hello {{ user.username }}</h1>
+  
+  {% else %}
+
+
+  {% endif %}
+  
+  <a href= "/logout" >Log Out </a> -->
+  
+
+    <section class="user-information">
+
+      <div class="user-details-container">
+
+        <h3>USER DETAILS:</h3>
+
+
+        <div class="user-wrapper">
+          
+          <h5 class="user-details"></h5>
+          <h5 class="user-details"></h5>
+          <h5 class="user-details"></h5>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="login-information">
+
+      <div class="login-details-container"></div>
+
+    </section>
+  
+
+
+{% endblock %}
