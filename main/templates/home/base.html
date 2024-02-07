@@ -1,6 +1,5 @@
 {% load static %} 
 {% load bootstrap5 %}
-{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,14 +9,6 @@
 
     {% bootstrap_css %}
    
-    {% compress css %}
-    <link
-      type="text/x-scss"
-      href="{% static '_main.scss' %}"
-      rel="stylesheet"
-      media="screen"
-    />
-    {% endcompress %}
     <link rel="stylesheet"  href="{% static 'style.css' %}">
     
     <title>{% block title %} MoniTrack {% endblock %}</title>
