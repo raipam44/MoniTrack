@@ -127,6 +127,7 @@ html {
   margin-right: 0;
   padding-right: 1.8em;
   gap: 0;
+  background: burlywood;
 }
 .user-nav-bar .logo-text {
   font-size: 2.5rem;
@@ -140,15 +141,8 @@ html {
 
 .information-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: red;
-}
-.information-container .user-details-container {
-  background: gray;
-}
-.information-container .login-details-container {
-  background: gainsboro;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */

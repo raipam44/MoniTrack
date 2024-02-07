@@ -24,29 +24,14 @@
         line-height: 0.5em;
     }
 
- 
+ background: burlywood;
 }
 
 
 
 .information-container{
-
-    display: flex;
-    align-items: center;
+    display:  flex;
     justify-content: center;
+    align-items: center;
 
-    .user-details-container{
-        background: gray;
-    }
-
-    .login-details-container{
-        background: gainsboro;
-    }
-
-    background: red;
 }
-
-
-
-
-

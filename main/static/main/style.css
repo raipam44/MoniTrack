@@ -127,7 +127,7 @@ html {
   margin-right: 0;
   padding-right: 1.8em;
   gap: 0;
-  background: gray;
+  background: burlywood;
 }
 .user-nav-bar .logo-text {
   font-size: 2.5rem;
@@ -137,6 +137,12 @@ html {
   padding: 10px;
   padding-right: 30px;
   line-height: 0.5em;
+}
+
+.information-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
