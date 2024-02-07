@@ -1,0 +1,37 @@
+
+.user-nav-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    font-size:  0.5rem;
+    padding: 0;
+    margin-right: 0;
+    padding-right: 1.8em;
+
+    gap: 0;
+
+    .logo-text{
+        font-size: 2.5rem;
+    }
+
+
+    .tagline{
+        font-size: 1rem;
+        padding: 10px;
+        padding-right: 30px;
+        line-height: 0.5em;
+    }
+
+ background:red;
+}
+
+
+
+.information-container{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+
+}
