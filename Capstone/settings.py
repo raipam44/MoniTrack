@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'Capstone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'initial_db',
+        'USER': 'masteruser',
+        'PASSWORD': '190304066',
+        'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
