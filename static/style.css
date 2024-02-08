@@ -127,7 +127,7 @@ html {
   margin-right: 0;
   padding-right: 1.8em;
   gap: 0;
-  background: blueviolet;
+  background: none;
 }
 .user-nav-bar .logo-text {
   font-size: 2.5rem;
@@ -141,13 +141,35 @@ html {
 
 .information-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 2.5rem;
+  background: gainsboro;
+  height: 80vh;
+}
+.information-container .user-details-container {
+  background-color: gray;
+  padding: 1.2em;
+}
+.information-container .login-details-container {
+  background-color: bisque;
+  padding: 1.2em;
 }
 
-.user-details-container h5 {
-  border: 1px solid black;
+.user-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.88em;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.user-data {
+  border-radius: 1.35em;
+  font-size: 1.35rem;
+  text-align: center;
+  width: fit-content;
 }
 
 /*# sourceMappingURL=style.css.map */

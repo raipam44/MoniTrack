@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %} 
+{% extends 'home/base.html' %}
 {% block title %} 
   {% if user.is_authenticated %}
     {{ user.username }}
@@ -42,14 +42,11 @@
 
       <div class="user-details-container">
 
-        <h3>USER DETAILS:</h3>
-
-
-        <div class="user-wrapper">
-          
-          <h5 class="user-details  "> Fullname: {{user.first_name}} {{user.last_name}} </h5>
-          <h5 class="user-details"></h5>
-          <h5 class="user-details"></h5>
+        <div class="user-wrapper  container-fluid">
+          <legend>USER DETAILS:</legend>
+          <input class="form-control user-data" type="text" value="Name: {{user.first_name}} {{user.last_name}}" aria-label="First Name" readonly>
+          <input class="form-control user-data" type="text" value="Student No.: {{user.student_number}} " aria-label="Student Number" readonly>
+          <input class="form-control user-data" type="text" value="Section: {{user.section}}" aria-label="Section" readonly>
 
         </div>
 
@@ -61,14 +58,16 @@
 
       <div class="login-details-container">
 
-        <h3>LOG-IN DETAILS:</h3>
+        
 
-        <div class="login-wrapper">
-          <h5 class="login-details"></h5>
-          <h5 class="login-details"></h5>
-          <h5 class="login-details"></h5>
-          
+        <div class="user-wrapper container-fluid">
+          <legend>SESSION:</legend>
+          <input class="form-control user-data" type="text" value="Name: {{user.first_name}} {{user.last_name}}" aria-label="First Name" readonly>
+          <input class="form-control user-data" type="text" value="{{user.student_number}} " aria-label="Student Number" readonly>
+          <input class="form-control user-data" type="text" value="{{user.section}}" aria-label="Section" readonly>
+
         </div>
+
       </div>
 
     </section>

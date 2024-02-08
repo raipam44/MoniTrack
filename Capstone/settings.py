@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
-import os
+# import mimetypes
+# import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -82,14 +82,27 @@ WSGI_APPLICATION = 'Capstone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'initial_db',
+#         'USER': 'masteruser',
+#         'PASSWORD': '190304066',
+#         'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
+#         'PORT': '5432'
+#     }
+# }
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'initial_db',
-        'USER': 'masteruser',
-        'PASSWORD': '190304066',
-        'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
-        'PORT': '5432'
+        # 'USER': 'masteruser',
+        # 'PASSWORD': '190304066',
+        # 'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
+        # 'PORT': '5432'
     }
 }
 
@@ -130,7 +143,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]  
-STATIC_ROOT = BASE_DIR / "staticfiles" 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -166,3 +180,7 @@ STATICFILES_FINDERS = [
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
+
+
+
+# mimetypes.add_type("text/css", ".css", True)

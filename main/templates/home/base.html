@@ -1,14 +1,12 @@
 {% load static %} 
-{% load bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
+    {% load bootstrap5 %}
     {% bootstrap_css %}
-   
     <link rel="stylesheet"  href="{% static 'style.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'assets/latest.png' %}">
     <title>{% block title %} MoniTrack {% endblock %}</title>
