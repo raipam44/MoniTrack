@@ -84,29 +84,26 @@ WSGI_APPLICATION = 'Capstone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'initial_db',
-#         'USER': 'masteruser',
-#         'PASSWORD': '190304066',
-#         'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
-#         'PORT': '5432'
-#     }
-# }
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'initial_db',
-        # 'USER': 'masteruser',
-        # 'PASSWORD': '190304066',
-        # 'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
-        # 'PORT': '5432'
+        'USER': 'masteruser',
+        'PASSWORD': '190304066',
+        'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'initial_db',
+      
+#     }
+# }
 
 
 # Password validation
