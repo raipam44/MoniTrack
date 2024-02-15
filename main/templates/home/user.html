@@ -1,9 +1,21 @@
 {% extends 'home/base.html' %}
+
+
+{% block head %} 
+
+  {% load static %}
+  <script src="{% static 'session.js' %}"></script> 
+
+
+{% endblock %}
+
+
+
+
+
 {% block title %} 
   {% if user.is_authenticated %}
-    {{ user.username }}
-  {% else %}
-    MoniTrack
+    MoniTrack | {{ user.last_name }}
   {% endif %}
 {% endblock %} 
 
@@ -36,8 +48,19 @@
   
 
 
-  <div class="information-container container-fluid ">
+{% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+ 
+{% endif %}
 
+
+  <div class="information-container container-fluid ">
+    
     <section class="user-information">
 
       <div class="user-details-container">
@@ -58,20 +81,30 @@
 
       <div class="login-details-container">
 
-        
-
+    
         <div class="user-wrapper container-fluid">
           <legend>SESSION:</legend>
-          <input class="form-control user-data" type="text" value="Name: {{user.first_name}} {{user.last_name}}" aria-label="First Name" readonly>
-          <input class="form-control user-data" type="text" value="{{user.student_number}} " aria-label="Student Number" readonly>
+          {% if login_date %}
+           <p>You logged in on: {{ login_date|date:"F j, Y" }}</p>
+          {% endif %}
+          {% if login_date %}
+            <p>You logged in at: {{ login_date|time:"H:i" }}</p>
+          {% endif %}
           <input class="form-control user-data" type="text" value="{{user.section}}" aria-label="Section" readonly>
 
         </div>
 
       </div>
 
+      <p>
+        {{message}}
+      </p>
+
     </section>
+
+     <a href="{% url 'log_out'%}"><button type="button" class="btn btn-success">Log Out</button></a>
   
   </div>
+
 
 {% endblock %}

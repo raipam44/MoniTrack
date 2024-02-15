@@ -9,6 +9,7 @@
     {% bootstrap_css %}
     <link rel="stylesheet"  href="{% static 'style.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'assets/latest.png' %}">
+    {% block head %} {% endblock %}
     <title>{% block title %} MoniTrack {% endblock %}</title>
   </head>
   <body>

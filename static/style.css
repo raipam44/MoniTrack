@@ -41,13 +41,13 @@ html {
 .btn {
   font-family: "Outfit-Bold", Helvetica;
   font-weight: 600;
-  color: #1e1e1e;
-  font-size: 1.75rem;
+  color: white;
+  font-size: 1.55rem;
   padding: 20px 40px 20px 40px;
   border-radius: 100px;
   max-width: 275px;
   max-height: 100px;
-  background: white;
+  background: #068f34;
   border: none;
   width: 200px;
 }
@@ -59,7 +59,6 @@ html {
 }
 
 .btn-primary {
-  background-color: #50c878;
   transition: background-color 10ms ease-in-out;
 }
 
@@ -152,7 +151,7 @@ html {
   padding: 1.2em;
 }
 .information-container .login-details-container {
-  background-color: bisque;
+  background-color: plum;
   padding: 1.2em;
 }
 

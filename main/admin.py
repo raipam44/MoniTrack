@@ -2,14 +2,21 @@ from django.contrib import admin
 from .models import CustomUser, UserSession
 # Register your models here.
 
-class UserSessionInline(admin.TabularInline):  # Use TabularInline for a more compact display
-    model = UserSession
-    extra = 0  # Number of empty forms to display (0 to hide them if no sessions exist)
 
 class CustomUserAdmin(admin.ModelAdmin):
-    inlines = [UserSessionInline]
+    list_display = ("last_name", "first_name", "section", "student_number")
+
+    
+
+class UserSessionAdmin(admin.ModelAdmin):
+    list_display = ("user", "login_time", "logout_time", "duration")
 
 
 
-admin.site.register(CustomUser)
-admin.site.register(UserSession)
+
+
+
+
+admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(UserSession, UserSessionAdmin)
+

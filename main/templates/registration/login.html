@@ -1,8 +1,16 @@
-{% extends 'home/base.html' %} {% block content %}
+{% extends 'home/base.html' %}
+{% block title %} 
+  MoniTrack | Log In
+{% endblock %} 
+
+
+{% block content %}
 
 <div class="container d-flex align-items-center justify-content-center">
-  <form method="POST"   action="{% url 'log_in'%}">
-    {% csrf_token %} {{form.as_p}}
+  <form method='POST' action="{% url 'log_in' %}">
+    {% csrf_token %} 
+   <input type="text" name="username" placeholder="Username" autocomplete="username">
+   <input type="password" name="password" placeholder="Password" autocomplete="current-password">
     <button type="submit">Log in</button>
   </form>
 </div>

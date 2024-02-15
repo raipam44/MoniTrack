@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 # import mimetypes
 # import os
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -54,7 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     "whitenoise.middleware.WhiteNoiseMiddleware",  # new
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # new
+    'main.middleware.SessionTimeoutMiddleware',
 ]
 
 ROOT_URLCONF = 'Capstone.urls'
@@ -184,3 +186,9 @@ COMPRESS_PRECOMPILERS = (
 
 
 # mimetypes.add_type("text/css", ".css", True)
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+# Set the session timeout to 600 seconds (10 minutes)
+SESSION_COOKIE_AGE = 6000
+AUTO_LOGOUT_IDLE_TIME = 600
