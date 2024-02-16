@@ -36,6 +36,16 @@ html {
   color: transparent;
   font-size: 4.5rem;
   text-align: center;
+  cursor: pointer;
+}
+
+a {
+  border: none;
+  text-decoration: none;
+}
+
+.input, .input:focus {
+  background: rgba(247, 247, 247, 0.6862745098);
 }
 
 .btn {
@@ -113,7 +123,11 @@ html {
 }
 
 .signup-container {
-  margin-top: 100px;
+  margin-top: 0.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .user-nav-bar {
@@ -169,6 +183,25 @@ html {
   font-size: 1.35rem;
   text-align: center;
   width: fit-content;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+.login-container .logo-text-login {
+  padding-bottom: 0.55em;
+}
+.login-container #login-alert {
+  width: fit-content;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out; /* Adjust the duration and easing as needed */
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,13 +6,81 @@
 
 {% block content %}
 
-<div class="container d-flex align-items-center justify-content-center">
-  <form method='POST' action="{% url 'log_in' %}">
+<div class="container login-container">
+  <a href=" {% url 'home' %}"><h1 class="logo-text logo-text-login">MoniTrack</h1></a>
+
+  <form method='POST' action="{% url 'log_in' %}" class="row g-7" id="login-form">
     {% csrf_token %} 
-   <input type="text" name="username" placeholder="Username" autocomplete="username">
-   <input type="password" name="password" placeholder="Password" autocomplete="current-password">
-    <button type="submit">Log in</button>
+
+    <div class="col-md-6 form-floating mb-3">
+      <input  name = "username" type="text" class="form-control input" id="floatingInput" placeholder="Username" autocomplete="username" required>
+      <label for="floatingInput">Username</label>
+    </div>
+    <div class="col-md-6 form-floating mb-3">
+      <input name="password" type="password" class="form-control input" id="floatingPassword" placeholder="Password" autocomplete="current-password"  required>
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div id="error-container" class="mt-3">
+      {% if login_failed %}
+        <div class="alert alert-danger" id="login-alert">
+          <strong>Login failed:</strong> Invalid username or password.
+        </div>
+      {% endif %}
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Log in</button>
   </form>
+
+
+
 </div>
+<!-- 
+<script>
+  // Function to display errors dynamically
+  function displayErrors(errors) {
+    var errorContainer = document.getElementById('error-container');
+    errorContainer.innerHTML = '<div class="alert alert-danger"><strong>Error(s):</strong><ul>';
+
+    for (var i = 0; i < errors.length; i++) {
+      errorContainer.innerHTML += '<li>' + errors[i] + '</li>';
+    }
+
+    errorContainer.innerHTML += '</ul></div>';
+
+     // Add fade-out effect using CSS class
+     errorContainer.classList.add('fade-out');
+
+     // Remove the fade-out class after the animation ends
+     setTimeout(function () {
+       errorContainer.innerHTML = '';
+       errorContainer.classList.remove('fade-out');
+     }, 1000); // Adjust the duration (in milliseconds) as needed
+   }
+
+  // Attach an event listener to the form submission
+  document.getElementById('login-form').addEventListener('submit', function (event) {
+    // Check for form validity using HTML5 built-in checkValidity() method
+    if (!event.target.checkValidity()) {
+      // Prevent form submission
+      event.preventDefault();
+
+      // Extract and display detailed error messages
+      var formElements = event.target.elements;
+      var errors = [];
+
+      for (var i = 0; i < formElements.length; i++) {
+        if (!formElements[i].checkValidity()) {
+          // Add the error message to the list
+          errors.push(formElements[i].validationMessage);
+        }
+      }
+
+      // Display errors dynamically
+      displayErrors(errors);
+    }
+  });
+</script> -->
+
 
 {% endblock %}

@@ -35,7 +35,7 @@ def home(request):
 
 def log_in(request):
     
-    
+    login_failed = False
     if request.user.is_authenticated:
          return HttpResponseRedirect('/user')
     
@@ -57,8 +57,10 @@ def log_in(request):
                 print("Session created successfully")
 
             return redirect('/user')
-
-    return render(request, 'registration/login.html')
+        else:
+            login_failed = True  # Set the variable if login fails
+            print("Authentication failed")
+    return render(request, 'registration/login.html', {'login_failed': login_failed})
 
 def user(request):
 

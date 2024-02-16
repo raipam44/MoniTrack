@@ -26,4 +26,16 @@ html {
   color: transparent;
   font-size: 4.5rem;
   text-align: center;
+  cursor: pointer;
+
+}
+
+a{
+  border: none;
+  text-decoration: none;
+}
+
+
+.input, .input:focus{
+  background: #f7f7f7af
 }
