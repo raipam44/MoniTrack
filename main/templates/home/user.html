@@ -1,17 +1,5 @@
+
 {% extends 'home/base.html' %}
-
-
-{% block head %} 
-
-  {% load static %}
-  <script src="{% static 'session.js' %}"></script> 
-
-
-{% endblock %}
-
-
-
-
 
 {% block title %} 
   {% if user.is_authenticated %}
@@ -90,8 +78,40 @@
           {% if login_date %}
             <p>You logged in at: {{ login_date|time:"H:i" }}</p>
           {% endif %}
-          <input class="form-control user-data" type="text" value="{{user.section}}" aria-label="Section" readonly>
 
+
+          <!-- {% if user_session %} -->
+
+
+            <p>Session started at: {{ user_session.login_time }}</p>
+            <p id="stopwatch">Duration: 00:00:00</p>
+            <script>
+
+                // Get the initial duration from the server (in seconds)
+                const initialDuration = Number("{{ user_session.duration.total_seconds|default:0 }}");
+
+                function updateStopwatch() {
+                    const currentDuration = initialDuration + Math.floor((Date.now() - new Date('{{ user_session.login_time|date:"Y-m-d\TH:i:sO" }}').getTime()) / 1000);
+                    const hours = Math.floor(currentDuration / 3600);
+                    const minutes = Math.floor((currentDuration % 3600) / 60);
+                    const seconds = currentDuration % 60;
+
+                    // Format the time and update the HTML element
+                    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                    
+                    document.getElementById('stopwatch').innerText = `Duration: ${formattedTime}`;
+                
+                }
+
+                // Update the stopwatch every second
+                setInterval(updateStopwatch, 1000);
+
+                // Initial call to set the correct time on page load
+                updateStopwatch();
+            </script>
+
+
+          <!-- {% endif %} -->
         </div>
 
       </div>
@@ -106,5 +126,8 @@
   
   </div>
 
-
+  {% block js %}
+    {% load static %}
+    <script src="{% static 'user.js' %}"></script> 
+  {% endblock %}
 {% endblock %}

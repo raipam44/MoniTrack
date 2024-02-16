@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+
 let logoutTimer;
 
 function resetLogoutTimer() {
@@ -36,3 +39,7 @@ function handleUserActivity() {
 //     // Perform logout actions
 //     logoutUser();
 // }
+
+
+
+});

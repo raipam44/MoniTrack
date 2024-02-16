@@ -65,9 +65,11 @@ def user(request):
     if request.user.is_authenticated:
         
         session = UserSession.objects.filter(user=request.user, logout_time__isnull=True).last()
+        user_session = UserSession.objects.filter(user=request.user, logout_time__isnull=True).last()
         context = {
         
             'login_date': session.login_time if session else None,
+            'user_session': user_session,
         }
         return render(request, 'home/user.html', context)
     return redirect('/home')
