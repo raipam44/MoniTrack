@@ -15,8 +15,9 @@ from django.core.exceptions import ValidationError
 class CustomUser(AbstractUser):
     student_number = models.CharField(unique=True, max_length=50)
     section = models.CharField(max_length=3)
+    
     def __str__(self) -> str:
-          return f"{self.id} : {self.last_name} ({self.section})"            
+          return f"{self.id} : {self.last_name} {self.first_name} ({self.section})"            
     
 
  
