@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y6qhsv-l1(gr3i6o&^$6j5(h@rji^l-v1pj8!4wa-r=59t6)+='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['monitrack-production.up.railway.app','127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://monitrack-production.up.railway.app']
 
 # Application definition
 
