@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 
 from pathlib import Path
+import secrets
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,15 +24,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-y6qhsv-l1(gr3i6o&^$6j5(h@rji^l-v1pj8!4wa-r=59t6)+='
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87')
+# SECRET_KEY = secrets.token_urlsafe(64) 
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_urlsafe(64) )
 
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = False
 
 ALLOWED_HOSTS = ['monitrack-production.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://monitrack-production.up.railway.app']
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -103,7 +106,7 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'initial_db',
+#         'NAME': 'initial_db.sqlite',
       
 #     }
 # }
@@ -191,8 +194,8 @@ COMPRESS_PRECOMPILERS = (
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Set the session timeout to 600 seconds (10 minutes)
 SESSION_COOKIE_AGE = 6000
-AUTO_LOGOUT_IDLE_TIME = 600
-
+AUTO_LOGOUT_IDLE_TIME = 6000
+SESSION_COOKIE_SECURE = True
 
 # Update database configuration from $DATABASE_URL environment variable (if defined)
 import dj_database_url
@@ -202,3 +205,9 @@ if 'DATABASE_URL' in os.environ:
         conn_max_age=500,
         conn_health_checks=True,
     )
+    
+    
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True

@@ -74,7 +74,7 @@ def user(request):
             'user_session': user_session,
         }
         return render(request, 'home/user.html', context)
-    return redirect('/home')
+    return redirect("/")
 
 
 
