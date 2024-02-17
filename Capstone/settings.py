@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 # import mimetypes
-# import os
+import os
 
 from pathlib import Path
 
@@ -22,10 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y6qhsv-l1(gr3i6o&^$6j5(h@rji^l-v1pj8!4wa-r=59t6)+='
+# SECRET_KEY = 'django-insecure-y6qhsv-l1(gr3i6o&^$6j5(h@rji^l-v1pj8!4wa-r=59t6)+='
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87')
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ['https://monitrack-production.up.railway.app']
@@ -140,7 +143,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]  
 STATIC_ROOT = BASE_DIR / "staticfiles"
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -189,3 +192,13 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Set the session timeout to 600 seconds (10 minutes)
 SESSION_COOKIE_AGE = 6000
 AUTO_LOGOUT_IDLE_TIME = 600
+
+
+# Update database configuration from $DATABASE_URL environment variable (if defined)
+import dj_database_url
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age=500,
+        conn_health_checks=True,
+    )
