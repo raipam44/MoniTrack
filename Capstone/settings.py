@@ -89,26 +89,26 @@ WSGI_APPLICATION = 'Capstone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'initial_db',
-        'USER': 'masteruser',
-        'PASSWORD': '190304066',
-        'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
-        'PORT': '5432'
-    }
-}
-
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'initial_db.sqlite',
-      
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'initial_db',
+#         'USER': 'masteruser',
+#         'PASSWORD': '190304066',
+#         'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
+#         'PORT': '5432'
 #     }
 # }
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'initial_db.db',
+      
+    }
+}
 
 
 # Password validation
@@ -192,7 +192,7 @@ COMPRESS_PRECOMPILERS = (
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Set the session timeout to 600 seconds (10 minutes)
-SESSION_COOKIE_AGE = 6000
+SESSION_COOKIE_AGE = 14400
 AUTO_LOGOUT_IDLE_TIME = 6000
 SESSION_COOKIE_SECURE = True
 

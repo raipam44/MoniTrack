@@ -5,7 +5,7 @@ let logoutTimer;
 
 function resetLogoutTimer() {
     clearTimeout(logoutTimer);
-    logoutTimer = setTimeout(logoutUser, 60000); // 10 minutes in milliseconds
+    logoutTimer = setTimeout(logoutUser, 1.8e+6); // 10 minutes in milliseconds
 }
 
 function logoutUser() {
