@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .tagline {
-  font-family: "Roboto-Medium", Helvetica;
   font-weight: 500;
-  color: black;
+  color: white;
   font-size: 1.5rem;
   text-align: center;
   text-align: center;
@@ -13,6 +14,18 @@
 body {
   margin: 0;
   text-rendering: optimizeSpeed;
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-image: url(/static/assets/polygon-scatter-haikei.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 900/540;
+  width: 100%;
+  height: 100vh;
+  color: white;
 }
 
 html {
@@ -31,7 +44,6 @@ html {
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Outfit-ExtraBold", Helvetica;
   font-weight: 800;
   color: transparent;
   font-size: 4.5rem;
@@ -44,22 +56,41 @@ a {
   text-decoration: none;
 }
 
-.input, .input:focus {
-  background: rgba(247, 247, 247, 0.6862745098);
+.input:focus {
+  background: #1a2b3a;
+  color: white;
+}
+
+.input {
+  background: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid rgba(5, 63, 24, 0.4039215686);
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(4, 247, 105, 0.25) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input {
+  backdrop-filter: blur(3px);
 }
 
 .btn {
-  font-family: "Outfit-Bold", Helvetica;
-  font-weight: 600;
+  background: rgb(78, 211, 100);
+  width: 8em;
+  height: 3.5em;
+  border-radius: 8em;
+  border: 1px solid transparent;
   color: white;
-  font-size: 1.55rem;
-  padding: 20px 40px 20px 40px;
-  border-radius: 100px;
-  max-width: 275px;
-  max-height: 100px;
-  background: #068f34;
-  border: none;
-  width: 200px;
 }
 
 .btn-container {
@@ -73,14 +104,9 @@ a {
 }
 
 .btn-primary:hover {
-  background-color: transparent;
-  color: #1e1e1e;
-  border: 3px solid #006fb9;
-}
-
-.btn-secondary {
-  border: 3px solid #006fb9;
-  transition: background-color 10ms ease-in-out;
+  border-color: rgba(5, 63, 24, 0.4039215686);
+  box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+  background: rgba(5, 63, 24, 0.4039215686);
 }
 
 .btn-secondary:hover {
@@ -134,55 +160,56 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  font-size: 0.5rem;
-  padding: 0;
+  align-items: center;
   margin-right: 0;
   padding-right: 1.8em;
   gap: 0;
-  background: none;
+  width: fit-content;
 }
 .user-nav-bar .logo-text {
   font-size: 2.5rem;
 }
 .user-nav-bar .tagline {
-  font-size: 1rem;
+  font-size: 0.7rem;
   padding: 10px;
   padding-right: 30px;
   line-height: 0.5em;
 }
 
-.information-container {
+.content-section {
   display: flex;
+  align-items: start;
   justify-content: space-evenly;
-  align-items: center;
-  gap: 2.5rem;
-  background: gainsboro;
-  height: 80vh;
 }
-.information-container .user-details-container {
-  background-color: gray;
-  padding: 1.2em;
-}
-.information-container .login-details-container {
-  background-color: plum;
-  padding: 1.2em;
-}
-
-.user-wrapper {
+.content-section .information-container {
   display: flex;
   flex-direction: column;
-  gap: 0.88em;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-}
-
-.user-data {
-  border-radius: 1.35em;
-  font-size: 1.35rem;
-  text-align: center;
+  align-items: center;
+  gap: 1.2em;
   width: fit-content;
+}
+.content-section .information-container .form-control {
+  text-indent: 0.49em;
+  width: 17em;
+  border-radius: 8em;
+}
+.content-section .information-container .form-control:focus {
+  border-color: rgba(5, 63, 24, 0.4039215686);
+  box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+}
+.content-section .logout-btn {
+  background: rgb(78, 211, 100);
+  width: 8em;
+  height: 2.5em;
+  border-radius: 8em;
+  border: 1px solid transparent;
+  color: white;
+}
+.content-section .logout-btn:hover {
+  border-color: rgba(5, 63, 24, 0.4039215686);
+  box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+  background: rgba(5, 63, 24, 0.4039215686);
 }
 
 .login-container {

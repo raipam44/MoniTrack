@@ -1,133 +1,137 @@
-
-{% extends 'home/base.html' %}
-
+{% extends 'home/base.html' %} 
 {% block title %} 
-  {% if user.is_authenticated %}
-    MoniTrack | {{ user.last_name }}
-  {% endif %}
+    {% if user.is_authenticated %}
+    MoniTrack | {{ user.last_name }} 
+    {% endif %} 
 {% endblock %} 
+{% block nav_bar %}
 
-
-{% block nav_bar %} 
-
-
-  <div class="container user-nav-bar">
-    <h1 class="logo-text">MoniTrack</h1>
-    <div class="tagline">
-      <p><span id="monitors-text">Monitors</span> your security</p>
-      <p><span id="tracks-text">Tracks </span>your Progress</p>
+    <div class="container-fluid user-nav-bar">
+      <h1 class="logo-text">MoniTrack</h1>
+      <div class="tagline">
+        <p><span id="monitors-text">Monitors</span> your security</p>
+        <p><span id="tracks-text">Tracks </span>your Progress</p>
+      </div>
     </div>
 
-  </div>
-
-{% endblock %}
-
-
-{% block content %}
-  <!-- {% if user.is_authenticated %}
-    <h1>Hello {{ user.username }}</h1>
-  
-  {% else %}
-
-
-  {% endif %}
-  
-  <a href= "/logout" >Log Out </a> -->
-  
-
-
-{% if messages %}
+{% endblock %} 
+{% block content %} 
+  {% if messages %} 
     {% for message in messages %}
-      <div class="alert alert-warning alert-dismissible fade show" role="alert" style="width: fit-content;">
-        <strong>Holy Macoroni!</strong> {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <div
+        class="alert alert-warning alert-dismissible fade show"
+        role="alert"
+        style="width: fit-content"
+      >
+        <strong>Holy Macaroni!</strong> {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
       </div>
     {% endfor %}
- 
-{% endif %}
+  {% endif %}
 
 
-  <div class="information-container container-fluid ">
-    
-    <section class="user-information">
-
-      <div class="user-details-container">
-
-        <div class="user-wrapper  container-fluid">
-          <legend>USER DETAILS:</legend>
-          <input class="form-control user-data" type="text" value="Name: {{user.first_name}} {{user.last_name}}" aria-label="First Name" readonly>
-          <input class="form-control user-data" type="text" value="Student No.: {{user.student_number}} " aria-label="Student Number" readonly>
-          <input class="form-control user-data" type="text" value="Section: {{user.section}}" aria-label="Section" readonly>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="login-information">
-
-      <div class="login-details-container">
-
-    
-        <div class="user-wrapper container-fluid">
-          <legend>SESSION:</legend>
-          {% if login_date %}
-           <p>You logged in on: {{ login_date|date:"F j, Y" }}</p>
-          {% endif %}
-          {% if login_date %}
-            <p>You logged in at: {{ login_date|time:"H:i" }}</p>
-          {% endif %}
+  <section class="content-section">
 
 
-          <!-- {% if user_session %} -->
+    <div class="information-container">
 
+       <legend>USER DETAILS:</legend>
 
-            <p>Session started at: {{ user_session.login_time }}</p>
-            <p id="stopwatch">Duration: 00:00:00</p>
-            <script>
+      <input type="text" 
+        class="form-control" 
+        placeholder="First Name" 
+        readonly 
+        value="Name: {{user.first_name}} {{user.last_name}}" 
+      />
+      <input type="text" 
+      class="form-control" 
+      placeholder="Section" 
+      readonly 
+      value="Section: {{user.section}}" 
 
-                // Get the initial duration from the server (in seconds)
-                const initialDuration = Number("{{ user_session.duration.total_seconds|default:0 }}");
+       />
+       <input type="text" 
+      class="form-control" 
+      placeholder="Student No." 
+      readonly 
+      value="Student No.: {{user.student_number}}" 
 
-                function updateStopwatch() {
-                    const currentDuration = initialDuration + Math.floor((Date.now() - new Date('{{ user_session.login_time|date:"Y-m-d\TH:i:sO" }}').getTime()) / 1000);
-                    const hours = Math.floor(currentDuration / 3600);
-                    const minutes = Math.floor((currentDuration % 3600) / 60);
-                    const seconds = currentDuration % 60;
+       />
+      <a href="{% url 'log_out' %}">
+       <button type="submit" class="logout-btn" >Log Out</button>
+      </a>
 
-                    // Format the time and update the HTML element
-                    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-                    
-                    document.getElementById('stopwatch').innerText = `Duration: ${formattedTime}`;
-                
-                }
+    </div>
 
-                // Update the stopwatch every second
-                setInterval(updateStopwatch, 1000);
-
-                // Initial call to set the correct time on page load
-                updateStopwatch();
-            </script>
-
-
-          <!-- {% endif %} -->
-        </div>
-
-      </div>
-
-      <p>
-        {{message}}
-      </p>
-
-    </section>
-
-     <a href="{% url 'log_out'%}"><button type="button" class="btn btn-success">Log Out</button></a>
+    <div class="information-container">
+      <legend>SESSION:</legend>
+      {% if login_date %}
+      <input type="text" 
+        class="form-control" 
+        placeholder="Log In Date" 
+        readonly 
+        value="Log In Date: {{ login_date|date:"F j, Y"  }}" 
+      />
+      {% endif %} 
+      {% if login_date %}
+      <input type="text" 
+        class="form-control" 
+        placeholder="Log In Date" 
+        readonly 
+        value="Log In Time: {{ login_date|date:"H:i" }}" 
+        />
+      {% endif %}
+      <p id="stopwatch" class="form-control">Duration: 00:00:00</p>
+      <script>
+        // Get the initial duration from the server (in seconds)
+        const initialDuration = Number(
+          "{{ user_session.duration.total_seconds|default:0 }}"
+        );
   
-  </div>
+        function updateStopwatch() {
+          const currentDuration =
+            initialDuration +
+            Math.floor(
+              (Date.now() -
+                new Date(
+                  '{{ user_session.login_time|date:"Y-m-d\TH:i:sO" }}'
+                ).getTime()) /
+                1000
+            );
+          const hours = Math.floor(currentDuration / 3600);
+          const minutes = Math.floor((currentDuration % 3600) / 60);
+          const seconds = currentDuration % 60;
+  
+          // Format the time and update the HTML element
+          const formattedTime = `${String(hours).padStart(2, "0")}:${String(
+            minutes
+          ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  
+          document.getElementById(
+            "stopwatch"
+          ).innerText = `Duration: ${formattedTime}`;
+        }
+  
+        // Update the stopwatch every second
+        setInterval(updateStopwatch, 1000);
+  
+        // Initial call to set the correct time on page load
+        updateStopwatch();
+      </script>
+    </div>
+  
+  </section>
 
-  {% block js %}
+ 
+  <p>{{message}}</p>
+
+  {% block js %} 
     {% load static %}
-    <script defer src="{% static 'user.js' %}"></script> 
-  {% endblock %}
+    <script defer src="{% static 'user.js' %}"></script>
+  {% endblock %} 
 {% endblock %}
