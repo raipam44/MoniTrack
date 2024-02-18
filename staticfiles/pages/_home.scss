@@ -1,0 +1,22 @@
+@use "../abstract/extend";
+
+#main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.tagline {
+  @extend %tagline;
+
+  #monitors-text {
+    color: #50c878;
+  }
+
+  #tracks-text {
+    color: #006fb9;
+  }
+}
