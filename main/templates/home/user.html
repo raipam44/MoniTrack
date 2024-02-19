@@ -6,13 +6,35 @@
 {% endblock %} 
 {% block nav_bar %}
 
-    <div class="container-fluid user-nav-bar">
-      <h1 class="logo-text">MoniTrack</h1>
-      <div class="tagline">
-        <p><span id="monitors-text">Monitors</span> your security</p>
-        <p><span id="tracks-text">Tracks </span>your Progress</p>
-      </div>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand logo-text nav-logo" href="#">MoniTrack</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" href="{% url 'log_out' %}">Log Out </a>
+        </li>
+      </ul>
+    
     </div>
+  </div>
+</nav>
+
+
+
+
+
 
 {% endblock %} 
 {% block content %} 
@@ -62,9 +84,7 @@
       value="Student No.: {{user.student_number}}" 
 
        />
-      <a href="{% url 'log_out' %}">
-       <button type="submit" class="logout-btn" >Log Out</button>
-      </a>
+    
 
     </div>
 
