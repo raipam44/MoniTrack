@@ -1,5 +1,5 @@
- # A Research Capstone school Project, currently developing by a student. This is for educational purposes only.
-  
+ # A research capstone school project. This is for educational purposes only.
+>   研究が嫌い!!
 
 
 
