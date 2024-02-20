@@ -1,5 +1,6 @@
  # A research capstone school project. This is for educational purposes only.
 >   研究が嫌い!!
+> Find me in [Discord#rem.sysc](https://discordapp.com/users/sysc.rem)
 
 
 
