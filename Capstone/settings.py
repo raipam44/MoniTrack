@@ -49,8 +49,6 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
 
 
-
-
 ]
 
 MIDDLEWARE = [

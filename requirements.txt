@@ -5,6 +5,8 @@ Django==4.2.10
 django-appconf==1.0.6
 django-bootstrap-v5==1.0.11
 django-compressor==4.4
+gunicorn==21.2.0
+packaging==23.2
 psycopg2-binary==2.9.9
 rcssmin==1.1.1
 rjsmin==1.2.1
