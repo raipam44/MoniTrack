@@ -44,6 +44,7 @@ def create_session(user):
     section_time_mapping = {
         'C1': (time(13, 0), time(14, 0)),
         'C2': (time(14, 0), time(15, 0)),
+        'C3': (time(13, 0), time(14, 30)),
         'C4': (time(13, 0), time(15, 0)),
         # Add similar mappings for other sections
     }
