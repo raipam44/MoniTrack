@@ -1,4 +1,4 @@
- # A Capstone project. This is website is intented for educational purposes only.
+ # A Capstone project. This website is intented for educational purposes only.
 >   
 研究が嫌い!!
 
