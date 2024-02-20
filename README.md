@@ -2,7 +2,7 @@
 >   
 研究が嫌い!!
 
-> [!IMPORTANT]
+
 Find me on [Discord#rem.sysc](https://discordapp.com/users/sysc.rem)
 
 
