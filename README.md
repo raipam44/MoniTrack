@@ -10,6 +10,10 @@
 
 
 ## The site can be found here [MoniTrack](https://monitrack-production.up.railway.app/). 
+> [!NOTE]
+> Reload the page again if the website is not working. Website automatically sleeps after a period of inactivity！！
+
+
 >
 **Home Page**
 ![Screenshots#1](https://media.discordapp.net/attachments/856019159899832350/1209339075077603348/image.png?ex=65e68fc7&is=65d41ac7&hm=d56e386e572ce72c8e7082d3815ebd0e7360086f1e7e83aacf4a9c5eac7ceb5c&=&format=webp&quality=lossless&width=1196&height=559)
