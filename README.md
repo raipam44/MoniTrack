@@ -1,9 +1,10 @@
- # A research capstone school project. This is for educational purposes only.
+ # A Capstone project. This is website is intented for educational purposes only.
 >   
 研究が嫌い!!
 
 > [!IMPORTANT]
-Find me on [Discord#rem.sysc](https://discordapp.com/users/sysc.rem)
+> Have a problem?
+> Find me on [Discord#rem.sysc](https://discordapp.com/users/sysc.rem)
 
 
 
