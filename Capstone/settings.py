@@ -29,11 +29,11 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_urlsafe(64))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['monitrack-production.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://monitrack-production.up.railway.app']
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -90,22 +90,11 @@ WSGI_APPLICATION = 'Capstone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'initial_db',
-#         'USER': 'masteruser',
-#         'PASSWORD': '190304066',
-#         'HOST': 'monitrack-database-1.cxk0kus2k4jq.ap-southeast-1.rds.amazonaws.com',
-#         'PORT': '5432'
-#     }
-# }
-
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'initial_db.db',
+        'NAME': 'monitrack-DB.sqlite3',
 
     }
 }
@@ -181,9 +170,6 @@ STATICFILES_FINDERS = [
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # Example subdirectory for compressed files
 
-COMPRESS_PRECOMPILERS = (
-    ('text/x-scss', 'django_libsass.SassCompiler'),
-)
 
 
 # mimetypes.add_type("text/css", ".css", True)
