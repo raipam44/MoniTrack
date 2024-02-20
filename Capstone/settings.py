@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_urlsafe(64))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['monitrack-production.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://monitrack-production.up.railway.app']
@@ -190,7 +190,7 @@ if 'DATABASE_URL' in os.environ:
     )
 
 
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 # SECURE_HSTS_SECONDS = 31536000
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True

@@ -1,41 +1,14 @@
-// .user-nav-bar {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   margin-right: 0;
-//   padding-right: 1.8em;
-//   gap: 0;
-
-//   .logo-text {
-//     font-size: 2.5rem;
-//   }
-
-//   .tagline {
-//     font-size: 0.7rem;
-//     padding: 10px;
-//     padding-right: 30px;
-//     line-height: 0.5em;
-//   }
-
-//   width: fit-content;
-// }
-
-.nav-logo{
+.nav-logo {
   font-size: 2.32rem;
 }
 
-
-
-
 .content-section {
+  margin-top: 9.8em;
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
-  height: 75vh;
+  height: 50vh;
   flex-wrap: wrap;
-  
-
 
   .information-container {
     display: flex;
@@ -45,23 +18,23 @@
     gap: 1.2em;
     width: fit-content;
 
-    legend{
+    legend {
       text-align: center;
-    }
-    .form-control {
-      text-indent: 0.49em;
-      width: clamp(15em, 17em, 25em);
-      border-radius: 8em;
-    
-    }
-
-    .form-control:focus {
-    
-      border-color: #053f1867;
-      box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
     }
   }
 
-  
+  .form-control {
+    text-indent: 0.49em;
+    width: clamp(15em, 17em, 25em);
+    border-radius: 8em;
+  }
+
+  .form-control:focus {
+    border-color: #053f1867;
+    box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+  }
+
  
+
 }
+

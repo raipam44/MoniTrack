@@ -126,22 +126,6 @@ a {
   margin: 40px 10px 20px 10px;
 }
 
-.container-fluid .btn-secondary {
-  display: flex;
-  width: 100px;
-  height: 50px;
-  text-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-}
-
-#main-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .tagline #monitors-text {
   color: #50c878;
 }
@@ -149,8 +133,15 @@ a {
   color: #006fb9;
 }
 
+.home-container {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .signup-container {
-  margin-top: 0.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,10 +153,11 @@ a {
 }
 
 .content-section {
+  margin-top: 9.8em;
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
-  height: 75vh;
+  height: 50vh;
   flex-wrap: wrap;
 }
 .content-section .information-container {
@@ -179,12 +171,12 @@ a {
 .content-section .information-container legend {
   text-align: center;
 }
-.content-section .information-container .form-control {
+.content-section .form-control {
   text-indent: 0.49em;
   width: 17em;
   border-radius: 8em;
 }
-.content-section .information-container .form-control:focus {
+.content-section .form-control:focus {
   border-color: rgba(5, 63, 24, 0.4039215686);
   box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
 }
