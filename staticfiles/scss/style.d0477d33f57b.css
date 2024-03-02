@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.tagline {
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  padding: 1.3rem;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.input:focus {
+  background: #1a2b3a;
+  color: white;
+}
+
+.input {
+  background: transparent;
+  color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid rgba(5, 63, 24, 0.4039215686);
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(4, 247, 105, 0.25) inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input {
+  -webkit-backdrop-filter: blur(1.5px);
+          backdrop-filter: blur(1.5px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn {
+  background: rgb(78, 211, 100);
+  width: 8em;
+  height: 3.5em;
+  border-radius: 8em;
+  border: 1px solid transparent;
+  color: white;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-primary {
+  transition: background-color 10ms ease-in-out;
+}
+
+.btn-primary:hover {
+  border-color: rgba(5, 63, 24, 0.4039215686);
+  box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+  background: rgba(5, 63, 24, 0.4039215686);
+}
+
+.btn-secondary:hover {
+  border: none;
+  background-color: #50c878;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#monitrack-logo-1 {
+  margin: 40px 10px 20px 10px;
+}
+
+.home-container {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-container {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-container .logo-text-login {
+  padding-bottom: 0.55em;
+}
+.login-container #login-alert {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.login-container #login-form {
+  padding: 2.1rem;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out; /* Adjust the duration and easing as needed */
+}
+
+.signup-container {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navbar .nav-logo {
+  font-size: 2.5rem;
+}
+
+.content-section {
+  margin-top: 2.8rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.content-section legend {
+  text-align: center;
+}
+.content-section .information-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2em;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.content-section .form-control {
+  text-indent: 0.49em;
+  width: 17em;
+  border-radius: 8em;
+}
+.content-section .form-control:focus {
+  border-color: rgba(5, 63, 24, 0.4039215686);
+  box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+}
+
+body {
+  background: url("../assets/blob-scatter-haikei.1c2309be03ca.svg") no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.logo-text {
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2509803922);
+  background: linear-gradient(90deg, #01ff55 25%, #028ce7 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 4.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tagline #monitors-text {
+  color: #50c878;
+}
+.tagline #tracks-text {
+  color: #006fb9;
+}

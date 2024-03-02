@@ -1,0 +1,8 @@
+@use '../abstract/' as *;
+
+.signup-container {
+
+  padding-top: 1.5rem;
+  @include flexCenter(column);
+ 
+}

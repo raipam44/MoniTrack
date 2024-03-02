@@ -1,0 +1,7 @@
+@use "../abstract" as *;
+
+.home-container {
+  padding-top: 1.5rem;
+  @include flexCenter(column);
+
+}
