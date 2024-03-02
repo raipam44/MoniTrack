@@ -7,7 +7,7 @@
 
     {% load bootstrap5 %} 
     {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static '/scss/style.css' %}" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -18,7 +18,9 @@
     <title>{% block title %} MoniTrack {% endblock %}</title>
   </head>
   <body>
-    <nav class="nav-bar">{% block nav_bar %} {% endblock %}</nav>
+    {% block nav_bar %} 
+      
+    {% endblock %}
 
     <main class="register-page">
       {% block content %}

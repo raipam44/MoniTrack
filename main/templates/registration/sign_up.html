@@ -3,7 +3,7 @@
   MoniTrack | Sign Up
 {% endblock %} 
 {% block content %}
-  <div class="container-md signup-container mt-5">
+  <div class="container signup-container">
           <a href=" {% url 'home' %}"><h1 class="logo-text logo-text-login">MoniTrack</h1></a>
           <form
             class="row g-7 w-50"
@@ -16,40 +16,40 @@
               <input
                 type="text"
                 class="form-control input"
-                id="first_name"
+                id="input-first-name"
                 placeholder="First Name"
                 name="first_name"
-                {{form.first_name.attr}} required
+                {{form.first_name.attr}} required autocomplete="given-name" autocapitalize="word"
               />
-              <label for="floatingInput"> First Name</label>
+              <label for="input-first-name"> First Name</label>
             </div>
             <div class="col-md-6 form-floating mb-3">
               <input
                 type="text"
                 class="form-control input"
-                id="inputLastName"
+                id="input-last-name"
                 placeholder="Last Name"
                 name="last_name"
-                {{form.last_name.attr}} required
+                {{form.last_name.attr}} required autocomplete="family-name"
               />
-              <label for="floatingInput">Last Name</label>
+              <label for="input-last-name">Last Name</label>
           
             </div>
             <div class="col-12 form-floating mb-3">
               <input
                 type="text"
                 class="form-control input"
-                id="inputUsername"
-                placeholder="Student Number"
+                id="input-user-name"
+                placeholder="Username"
                 name="username"
                 {{form.username.attr}} required autocomplete="username"
               />
-              <label for="floatingInput" class="form-label">Username</label>
+              <label for="input-user-name" class="form-label">Username</label>
             </div>
             <div class="form-floating">
               <select
                 class="form-select input"
-                id="floatingSelect"
+                id="input-section"
                 aria-label="Floating label select example"
                 name="section"
                 {{form.section.attr}} required
@@ -63,42 +63,42 @@
                 <option value="C7">C7</option>
                 <option value="C8">C8</option>
               </select>
-              <label for="floatingSelect">Sections</label>
+              <label for="input-section">Sections</label>
             </div>
             <p></p>
             <div class="col-12 form-floating mb-3">
               <input
-                type="text"
+                type="number"
                 class="form-control input"
-                id="inputStudentNumber"
+                id="input-student-number"
                 placeholder="Student Number"
                 name="student_number"
                 {{form.student_number.attr}} required
               />
-              <label for="floatingInput" class="form-label">Student Number</label>
+              <label for="input-student-number" class="form-label">Student Number</label>
             </div>
             <div class="col-12 form-floating mb-3">
               <input
                 type="password"
                 class="form-control input"
-                id="inputPassword"
+                id="input-password"
                 placeholder="Password"
                 name="password1"
-                {{form.password1.attr}} required autocomplete="new-password"
+                {{form.password1.attr}} required
               />
-              <label for="floatingInput" class="form-label">Password</label>
+              <label for="input-password" class="form-label">Password</label>
             
             </div>
             <div class="col-12 form-floating mb-3">
               <input
                 type="password"
                 class="form-control input"
-                id="inputConfirmPassword"
+                id="input-confirm-password"
                 placeholder="Confirm Password"
                 name="password2"
                 {{form.password2.attr}} required autocomplete="new-password"
               />
-              <label for="floatingInput" class="form-label">Confirm Password</label>
+              <label for="input-confirm-password" class="form-label">Confirm Password</label>
               
             </div>
           <div id="error-container" class="mt-3">
