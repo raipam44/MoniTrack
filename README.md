@@ -16,7 +16,7 @@
 
 >
 **Home Page**
-![Screenshots#1](https://media.discordapp.net/attachments/856019159899832350/1209339075077603348/image.png?ex=65e68fc7&is=65d41ac7&hm=d56e386e572ce72c8e7082d3815ebd0e7360086f1e7e83aacf4a9c5eac7ceb5c&=&format=webp&quality=lossless&width=1196&height=559)
+![Screenshots#1](https://media.discordapp.net/attachments/856019159899832350/1213382651441053706/image.png?ex=65f545a7&is=65e2d0a7&hm=a4b0d2a9ac08222bf61720b47868dd90251181fb1302c944391add614c0834b9&=&format=webp&quality=lossless&width=956&height=468)
 
 **Log In Page**
-![Screenshots#2](https://media.discordapp.net/attachments/856019159899832350/1209340605491187722/image.png?ex=65e69134&is=65d41c34&hm=52ad6e62ce8aee6d854963273d647442561bc9da946e010c097db47f237da861&=&format=webp&quality=lossless)
+![Screenshots#2](https://media.discordapp.net/attachments/856019159899832350/1213388089154609175/image.png?ex=65f54ab8&is=65e2d5b8&hm=08d50466e6851ac313bb1002fd2deff948ee89bab233ad05dd0ff7e4ad84d208&=&format=webp&quality=lossless&width=960&height=468)
