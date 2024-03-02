@@ -92,7 +92,6 @@ def log_out(request):
 def profile(request):
     
       if request.user.is_authenticated:
+        return render(request, 'home/profile.html')
           
-           return render(request, 'home/profile.html')
-          
-      return redirect("/")
+      return redirect("/home")
