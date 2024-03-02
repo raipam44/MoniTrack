@@ -16,7 +16,7 @@ def sign_up(request):
             # print(request.POST)
             # print(form.errors)
             login(request, user)  # Redirect to a success page
-            create_session(request.user) 
+            create_session(request.user)
             return redirect('/home')
     else:
         form = CustomUserCreationForm()
@@ -26,20 +26,19 @@ def sign_up(request):
 
 
 def home(request):
-    
+
     if request.user.is_authenticated:
-         return HttpResponseRedirect('/user')
-    
+        return HttpResponseRedirect('/user')
+
     return render(request, 'home/home.html')
 
 
 def log_in(request):
-    
+
     login_failed = False
     if request.user.is_authenticated:
-         return HttpResponseRedirect('/user')
-    
-    
+        return HttpResponseRedirect('/user')
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -62,14 +61,17 @@ def log_in(request):
             print("Authentication failed")
     return render(request, 'registration/login.html', {'login_failed': login_failed})
 
+
 def user(request):
 
     if request.user.is_authenticated:
-        
-        session = UserSession.objects.filter(user=request.user, logout_time__isnull=True).last()
-        user_session = UserSession.objects.filter(user=request.user, logout_time__isnull=True).last()
+
+        session = UserSession.objects.filter(
+            user=request.user, logout_time__isnull=True).last()
+        user_session = UserSession.objects.filter(
+            user=request.user, logout_time__isnull=True).last()
         context = {
-        
+
             'login_date': session.login_time if session else None,
             'user_session': user_session,
         }
@@ -77,21 +79,18 @@ def user(request):
     return redirect("/")
 
 
-
 def log_out(request):
     print(f"Signning out the {request.user}")
     if request.user.is_authenticated:
         update_session(request.user)  # Update the session record
         logout(request)
-   
 
     return redirect('/home')
 
 
-
 def profile(request):
-    
-      if request.user.is_authenticated:
+
+    if request.user.is_authenticated:
         return render(request, 'home/profile.html')
-          
-      return redirect("/home")
+
+    return redirect("/home")
