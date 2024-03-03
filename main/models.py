@@ -44,6 +44,10 @@ class UserRecord(models.Model):
 
         user = models.ForeignKey(CustomUser, on_delete = models.CASCADE, related_name = "record")
         date = models.DateTimeField(default=timezone.now)
+        previous_student_number = models.CharField( max_length=50, blank = True)
+        previous_section = models.CharField(max_length=3, blank = True)
+        previous_first_name = models.CharField( max_length=50, blank = True)
+        previous_last_name = models.CharField( max_length=50, blank = True)
 
 
   

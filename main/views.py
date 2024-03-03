@@ -8,8 +8,6 @@ from .models import *
 from django.contrib import messages
 
 
-
-
 def sign_up(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -100,7 +98,14 @@ def profile(request):
 
                 # Use a different variable name to hold the user instance
                 current_user = request.user  # Clearer variable name for clarity
-                UserRecord.objects.create(user=current_user)
+                previous_student_number = form.instance.student_number
+                previous_section = form.instance.section
+                previous_first_name = form.instance.first_name
+                previous_last_name = form.instance.last_name
+                UserRecord.objects.create(
+                    user=current_user, previous_student_number=previous_student_number,
+                    previous_section=previous_section, previous_first_name=previous_first_name,
+                    previous_last_name=previous_last_name)
 
                 messages.success(request, "User Has Been Updated!")
                 return redirect('/profile')
