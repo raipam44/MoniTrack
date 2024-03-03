@@ -8,6 +8,7 @@ from .models import *
 from django.contrib import messages
 
 
+
 def sign_up(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -15,6 +16,9 @@ def sign_up(request):
             user = form.save()
             # print(request.POST)
             # print(form.errors)
+            
+           
+            
             login(request, user)  # Redirect to a success page
             create_session(request.user)
             return redirect('/home')
