@@ -34,7 +34,7 @@ MoniTrack | {{ user.last_name }} {% endif %} {% endblock %} {% block nav_bar %}
 </nav>
 {% endblock %} {%block content %} hello,fuckers
 <div class="container profile-container">
-  <form action="#" class="row gap-4 profile-form">
+  <form action="{% url 'profile' %}" method="post" class="row gap-4 profile-form">
     <div class="col-md-8">
       <label for="profile__first-name">First Name</label>
       <input
@@ -82,6 +82,11 @@ MoniTrack | {{ user.last_name }} {% endif %} {% endblock %} {% block nav_bar %}
       />
     </div>
   </form>
+
+  <div>
+    <img src="{{user.profile_pic}}" alt="Profile Image">
+  </div>
+
 </div>
 
 {%endblock%}

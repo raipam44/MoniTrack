@@ -49,9 +49,6 @@ INSTALLED_APPS = [
     'bootstrap5',
     'main.apps.MainConfig',
 
-  
-
-
 ]
 
 MIDDLEWARE = [
