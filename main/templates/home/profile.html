@@ -18,7 +18,9 @@ MoniTrack | {{ user.last_name }} {% endif %} {% endblock %} {% block nav_bar %}
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="{% url 'user' %}">Home</a>
+          <a class="nav-link" aria-current="page" href="{% url 'user' %}"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">Profile</a>
@@ -30,5 +32,56 @@ MoniTrack | {{ user.last_name }} {% endif %} {% endblock %} {% block nav_bar %}
     </div>
   </div>
 </nav>
+{% endblock %} {%block content %} hello,fuckers
+<div class="container profile-container">
+  <form action="#" class="row gap-4 profile-form">
+    <div class="col-md-8">
+      <label for="profile__first-name">First Name</label>
+      <input
+        type="text"
+        class="form-control profile-form__inputs"
+        id="profile__first-name"
+        value="{{user.first_name}}"
+      />
+    </div>
+    <div class="col-md-8">
+      <label for="profile__last-name">Last Name</label>
+      <input
+        type="text"
+        class="form-control profile-form__inputs"
+        id="profile__last-name"
+        value="{{user.last_name}}"
+      />
+    </div>
+    <div class="col-md-8">
+      <label for="profile__section">Section</label>
+      <select
+        class="form-select form-control profile-form__inputs"
+        id="profile__section"
+        name="section"
+      >
+        <option selected>{{user.section}}</option>
+        <option value="C1">C1</option>
+        <option value="C2">C2</option>
+        <option value="C3">C3</option>
+        <option value="C4">C4</option>
+        <option value="C5">C5</option>
+        <option value="C6">C6</option>
+        <option value="C7">C7</option>
+        <option value="C8">C8</option>
+      </select>
+    </div>
 
-{% endblock %}
+    <div class="col-md-8">
+      <label for="profile__student-number">Student Number</label>
+      <input
+        type="number"
+        class="form-control profile-form__inputs"
+        id="profile__student-number"
+        value="{{user.student_number}}"
+      />
+    </div>
+  </form>
+</div>
+
+{%endblock%}

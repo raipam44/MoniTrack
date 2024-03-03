@@ -27,14 +27,5 @@
     width: fit-content;
   }
 
-  .form-control {
-    text-indent: 0.49em;
-    width: clamp(15em, 17em, 25em);
-    border-radius: 8em;
-  }
-
-  .form-control:focus {
-    border-color: #053f1867;
-    box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
-  }
+  @include form-style;
 }

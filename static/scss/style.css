@@ -176,11 +176,36 @@ input::-webkit-inner-spin-button {
 .content-section .form-control {
   text-indent: 0.49em;
   width: 17em;
-  border-radius: 8em;
+  border-radius: 0.3rem;
 }
 .content-section .form-control:focus {
   border-color: rgba(5, 63, 24, 0.4039215686);
   box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+}
+
+.profile-container {
+  width: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 2rem;
+}
+.profile-container .profile-form {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.profile-container .profile-form .form-control {
+  text-indent: 0.49em;
+  width: 17em;
+  border-radius: 0.3rem;
+}
+.profile-container .profile-form .form-control:focus {
+  border-color: rgba(5, 63, 24, 0.4039215686);
+  box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+}
+.profile-container .profile-form__inputs {
+  height: 2.05em;
 }
 
 body {

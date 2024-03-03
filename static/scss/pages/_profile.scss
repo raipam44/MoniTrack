@@ -1,0 +1,24 @@
+@use '../abstract/' as *;
+
+.profile-container {
+
+    width: 25rem;
+    @include flexCenter();
+
+
+  .profile-form {
+    // background: gray;
+
+    width: fit-content;
+    @include form-style;
+
+    &__inputs{
+
+        height: 2.05em;
+    }
+
+  }
+  
+  margin: 2rem;
+
+}
