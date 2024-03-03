@@ -176,15 +176,60 @@ input::-webkit-inner-spin-button {
 .content-section .form-control {
   text-indent: 0.49em;
   width: 17em;
-  border-radius: 8em;
+  border-radius: 0.3rem;
 }
 .content-section .form-control:focus {
   border-color: rgba(5, 63, 24, 0.4039215686);
   box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
 }
 
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: start;
+  margin: 2rem;
+}
+.profile-section .line {
+  width: 100%;
+  border: 1px solid rgb(71, 68, 68);
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap-reverse;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  gap: 2rem;
+}
+.profile-container .profile-form__inputs {
+  height: 1.99rem;
+}
+
+.profile__img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.profile__img-wrapper img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
 body {
-  background: url("../assets/blob-scatter-haikei.svg") no-repeat center center fixed;
+  background: url("../assets/blob-scatter-haikei.svg") no-repeat center center fixed, rgba(3, 3, 3, 0.8);
   background-size: cover;
   width: 100vw;
   height: 100vh;
