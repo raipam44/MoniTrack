@@ -94,19 +94,19 @@ def profile(request):
         if request.method == 'POST':
             form = UpdateCustomUserForm(request.POST, instance=request.user)
             if form.is_valid():
-                form.save()
+                
 
                 # Use a different variable name to hold the user instance
                 current_user = request.user  # Clearer variable name for clarity
-                previous_student_number = form.instance.student_number
-                previous_section = form.instance.section
-                previous_first_name = form.instance.first_name
-                previous_last_name = form.instance.last_name
+                previous_student_number = request.user.student_number
+                previous_section = request.user.section
+                previous_first_name = request.user.first_name
+                previous_last_name = request.user.last_name
                 UserRecord.objects.create(
                     user=current_user, previous_student_number=previous_student_number,
                     previous_section=previous_section, previous_first_name=previous_first_name,
                     previous_last_name=previous_last_name)
-
+                form.save()
                 messages.success(request, "User Has Been Updated!")
                 return redirect('/profile')
         else:
