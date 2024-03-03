@@ -48,13 +48,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap5',
     'main.apps.MainConfig',
-    'djangosecure',
+  
 
 
 ]
 
 MIDDLEWARE = [
-    "djangosecure.middleware.SecurityMiddleware",
+    'sslify.middleware.SSLifyMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",  # new
