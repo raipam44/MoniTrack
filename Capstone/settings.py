@@ -48,14 +48,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap5',
     'main.apps.MainConfig',
-    'sslify',
+
   
 
 
 ]
 
 MIDDLEWARE = [
-    'sslify.middleware.SSLifyMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",  # new
@@ -200,9 +199,9 @@ if 'DATABASE_URL' in os.environ:
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
-# SECURE_HSTS_SECONDS = 604800
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
-# SECURE_FRAME_DENY = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECURE_BROWSER_XSS_FILTER = True
+SECURE_HSTS_SECONDS = 604800
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_FRAME_DENY = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
