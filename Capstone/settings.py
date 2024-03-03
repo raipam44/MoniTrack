@@ -181,8 +181,8 @@ STATICFILES_FINDERS = [
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Set the session timeout to 600 seconds (10 minutes)
-SESSION_COOKIE_AGE = 14400
-AUTO_LOGOUT_IDLE_TIME = 6000
+SESSION_COOKIE_AGE = 3600
+AUTO_LOGOUT_IDLE_TIME = 1800 
 SESSION_COOKIE_SECURE = True
 
 # Update database configuration from $DATABASE_URL environment variable (if defined)
