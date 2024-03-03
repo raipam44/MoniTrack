@@ -1,24 +1,54 @@
-@use '../abstract/' as *;
-
-.profile-container {
-
-    width: 25rem;
-    @include flexCenter();
+@use "../abstract/" as *;
 
 
-  .profile-form {
-    // background: gray;
-
-    width: fit-content;
-    @include form-style;
-
-    &__inputs{
-
-        height: 2.05em;
-    }
-
-  }
+.profile-section{
+  @include flexCenter(column);
+  align-items: start;
   
+
   margin: 2rem;
 
+  .line{
+    width: 100%;
+    border: 1px solid rgb(71, 68, 68);
+  }
+ 
+}
+
+.profile-container {
+  @include flexCenter;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap-reverse;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+
+  gap: 2rem;
+
+  .profile-form {
+
+    
+ 
+
+    &__inputs {
+     
+      height: 1.99rem;
+  
+    }
+  }
+}
+
+.profile__img-wrapper {
+
+  @include flexCenter(column);
+  justify-content: start;
+  align-items: start;
+  width: fit-content;
+
+
+  img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+  }
 }

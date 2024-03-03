@@ -1,11 +1,12 @@
 # views.py
 from datetime import timedelta
 from django.shortcuts import render, redirect, HttpResponseRedirect
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, UpdateCustomUserForm
 from django.contrib.auth import login, logout, authenticate
 from django.utils import timezone
 from .models import *
 from django.contrib import messages
+
 
 
 
@@ -16,9 +17,7 @@ def sign_up(request):
             user = form.save()
             # print(request.POST)
             # print(form.errors)
-            
-           
-            
+
             login(request, user)  # Redirect to a success page
             create_session(request.user)
             return redirect('/home')
@@ -93,8 +92,21 @@ def log_out(request):
 
 
 def profile(request):
-
     if request.user.is_authenticated:
-        return render(request, 'home/profile.html')
+        if request.method == 'POST':
+            form = UpdateCustomUserForm(request.POST, instance=request.user)
+            if form.is_valid():
+                form.save()
 
-    return redirect("/home")
+                # Use a different variable name to hold the user instance
+                current_user = request.user  # Clearer variable name for clarity
+                UserRecord.objects.create(user=current_user)
+
+                messages.success(request, "User Has Been Updated!")
+                return redirect('/profile')
+        else:
+            form = UpdateCustomUserForm(instance=request.user)
+    else:
+        return redirect('/user')
+
+    return render(request, 'home/profile.html', {'form': form})

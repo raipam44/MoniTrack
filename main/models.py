@@ -4,18 +4,23 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.shortcuts import render
 from django.utils import timezone
-from django.core.exceptions import ValidationError
-    
+from django.utils.timezone import now
+
 
 
 
  
 
+def get_user_profile_pic_path(instance, filename):
+    # Generate a unique filename with timestamp
+    extension = filename.split('.')[-1]
+    filename = f'{instance.username}_{now().strftime("%Y%m%d_%H%M%S")}.{extension}'
+    return f'profile_pics/{instance.username}/{filename}'
 
 class CustomUser(AbstractUser):
     student_number = models.CharField(unique=True, max_length=50)
     section = models.CharField(max_length=3)
-    profile_pic =models.ImageField(null=True, blank=True)
+    profile_pic = models.ImageField(upload_to=get_user_profile_pic_path, null=True, blank=True)
     
     def __str__(self) -> str:
           return f"{self.id} : {self.last_name} {self.first_name} ({self.section})"            
@@ -38,8 +43,9 @@ class UserSession(models.Model):
 class UserRecord(models.Model):
 
         user = models.ForeignKey(CustomUser, on_delete = models.CASCADE, related_name = "record")
+        date = models.DateTimeField(default=timezone.now)
 
-    
+
   
  
 def create_session(user):

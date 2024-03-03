@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CustomUser, UserSession
+from .models import CustomUser, UserSession, UserRecord
 # Register your models here.
 
 
@@ -19,4 +19,5 @@ class UserSessionAdmin(admin.ModelAdmin):
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(UserSession, UserSessionAdmin)
+admin.site.register(UserRecord)
 
