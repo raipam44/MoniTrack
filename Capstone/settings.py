@@ -29,12 +29,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_urlsafe(64))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['monitrack-production.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://monitrack-production.up.railway.app']
 CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_HTTPONLY = True
+
 
 # Application definition
 
@@ -198,7 +198,6 @@ if 'DATABASE_URL' in os.environ:
 
 
 if DEBUG == False:
-
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
     SECURE_HSTS_SECONDS = 604800
@@ -207,3 +206,4 @@ if DEBUG == False:
     SECURE_FRAME_DENY = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_BROWSER_XSS_FILTER = True
+    SESSION_COOKIE_HTTPONLY = True
