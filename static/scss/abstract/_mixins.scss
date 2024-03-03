@@ -5,3 +5,19 @@
     flex-direction: $direction;
 
 }
+
+
+@mixin form-style{
+
+    .form-control {
+        text-indent: 0.49em;
+        width: clamp(15em, 17em, 25em);
+        border-radius: 0.3rem;
+      
+      }
+    
+      .form-control:focus {
+        border-color: #053f1867;
+        box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+      }
+}
