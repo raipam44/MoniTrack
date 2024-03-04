@@ -51,7 +51,7 @@ def log_in(request):
             error_message = create_session(request.user)
 
             if error_message:
-                messages.error(request, error_message)
+                # messages.error(request, error_message)
                 print(f"Error creating session: {error_message}")
             else:
                 print("Session created successfully")
