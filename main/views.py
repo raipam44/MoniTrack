@@ -4,6 +4,8 @@ from .forms import CustomUserCreationForm, UpdateCustomUserForm
 from django.contrib.auth import login, logout, authenticate
 from .models import *
 from django.contrib import messages
+from django.dispatch import receiver
+from django.contrib.auth.signals import user_logged_out  # Import user_logged_out signal
 
 
 def sign_up(request):
@@ -78,13 +80,14 @@ def user(request):
     return redirect("/")
 
 
-def log_out(request):
-    print(f"Signning out the {request.user}")
-    if request.user.is_authenticated:
-        update_session(request.user)  # Update the session record
-        logout(request)
+# def log_out(request):
+#     print(f"Signning out the {request.user}")
+#     if request.user.is_authenticated:
+        
+#         update_session(request.user)  # Update the session record
+#         logout(request)
 
-    return redirect('/home')
+#     return redirect('/logout')
 
 
 def profile(request):
@@ -131,3 +134,6 @@ def feedback(request):
             return redirect('home')  # Redirect to another page (e.g., home page)
 
     return render(request, 'home/feedback.html')
+
+def session_update(request):
+    update_session(request.user)

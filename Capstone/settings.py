@@ -10,11 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 # import mimetypes
+from datetime import timedelta
 import dj_database_url
 import os
 
 from pathlib import Path
 import secrets
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -59,7 +61,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'main.middleware.SessionTimeoutMiddleware',
+    # 'main.middleware.SessionTimeoutMiddleware',
+    'django_auto_logout.middleware.auto_logout', #django auto log out
+    
 ]
 
 ROOT_URLCONF = 'Capstone.urls'
@@ -75,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_auto_logout.context_processors.auto_logout_client',
 
             ],
         },
@@ -159,7 +164,7 @@ AUTH_USER_MODEL = 'main.CustomUser'
 
 
 LOGIN_REDIRECT_URL = '/user'
-LOGOUT_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/home'
 
 
 STATICFILES_FINDERS = [
@@ -180,9 +185,23 @@ STATICFILES_FINDERS = [
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Set the session timeout to 600 seconds (10 minutes)
-SESSION_COOKIE_AGE = 3600 * 4
-AUTO_LOGOUT_IDLE_TIME = 3600 * 3
+# SESSION_COOKIE_AGE = 3600 * 4
+
 SESSION_COOKIE_SECURE = True
+# SESSION_SAVE_EVERY_REQUEST = True
+
+
+
+AUTO_LOGOUT = {
+    'IDLE_TIME': 5700,
+    'SESSION_TIME': timedelta(hours=4),
+    'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
+    'MESSAGE': 'The session has expired. Please login again to continue.',
+}
+
+
+
+
 
 # Update database configuration from $DATABASE_URL environment variable (if defined)
 

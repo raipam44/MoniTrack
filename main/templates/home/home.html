@@ -7,7 +7,23 @@
 /> -->
 <div class="home-container">
 
-  
+  {% if messages %} 
+  {% for message in messages %}
+    <div
+      class="alert alert-warning alert-dismissible fade show"
+      role="alert"
+      style="width: fit-content"
+    >
+      <strong>Holy Macaroni!</strong> {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+  {% endfor %}
+  {% endif %}
   <a href="{% url 'home' %}"><h1 class="logo-text">MoniTrack</h1></a>
   
   <div class="tagline">

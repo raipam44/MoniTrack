@@ -5,6 +5,9 @@ from django.contrib.auth.models import AbstractUser
 from django.shortcuts import render
 from django.utils import timezone
 from django.utils.timezone import now
+from django.dispatch import receiver
+from django.contrib.auth.signals import user_logged_out
+
 
 
 
@@ -81,11 +84,23 @@ def create_session(user):
 
    
     return None
-  
+
+@receiver(user_logged_out)
+def update_session_signal(user, **kwargs):
+        print(f"Updating session for user {user}")
+        session = UserSession.objects.filter(user=user, logout_time__isnull=True).last()
+        if session:
+        
+            session.logout_time = timezone.now()
+            session.duration = session.logout_time - session.login_time
+            session.save()
+            
+            
 def update_session(user):
         print(f"Updating session for user {user}")
         session = UserSession.objects.filter(user=user, logout_time__isnull=True).last()
         if session:
+        
             session.logout_time = timezone.now()
             session.duration = session.logout_time - session.login_time
             session.save()
