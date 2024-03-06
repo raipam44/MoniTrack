@@ -64,7 +64,7 @@ MoniTrack | {{ user.last_name }} {% endif %} {% endblock %} {% block nav_bar %}
     
     <form class="feedback-container" method="post" action="{% url 'feedback' %}">
       {% csrf_token %} 
-      <p>Your feedback will helps us to make this website even <strong> better!</strong></p>
+      <p> Your suggestions will enable us to improve this website even <strong> further!</strong></p>
        <textarea name="message" id="" cols="50" rows="10"></textarea>
     </div>
     <div>
