@@ -183,13 +183,17 @@ input::-webkit-inner-spin-button {
   box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
 }
 
-.generic-section {
+.profile-section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   align-items: start;
   margin: 2rem;
+}
+.profile-section .line {
+  width: 100%;
+  border: 1px solid rgb(71, 68, 68);
 }
 
 .profile-container {
@@ -224,18 +228,6 @@ input::-webkit-inner-spin-button {
   height: 200px;
 }
 
-.feedback-container {
-  margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
-}
-.feedback-container .feedback-input {
-  height: 2rem;
-  text-wrap: wrap;
-}
-.feedback-container p {
-  font-weight: 500;
-}
-
 body {
   background: url("../assets/blob-scatter-haikei.svg") no-repeat center center fixed, rgba(3, 3, 3, 0.8);
   background-size: cover;
@@ -261,9 +253,4 @@ body {
 }
 .tagline #tracks-text {
   color: #006fb9;
-}
-
-.line {
-  width: 100%;
-  border: 1px solid rgb(71, 68, 68);
 }

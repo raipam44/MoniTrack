@@ -50,6 +50,11 @@ class UserRecord(models.Model):
         previous_last_name = models.CharField( max_length=50, blank = True)
 
 
+class Feedback(models.Model):
+        user = models.ForeignKey(CustomUser, on_delete = models.CASCADE, related_name = "feedback")
+        date = models.DateTimeField(default=timezone.now)
+        message = models.TextField()
+
   
  
 def create_session(user):

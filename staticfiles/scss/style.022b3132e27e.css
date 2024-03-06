@@ -237,7 +237,7 @@ input::-webkit-inner-spin-button {
 }
 
 body {
-  background: url("../assets/blob-scatter-haikei.svg") no-repeat center center fixed, rgba(3, 3, 3, 0.8);
+  background: url("../assets/blob-scatter-haikei.1c2309be03ca.svg") no-repeat center center fixed, rgba(3, 3, 3, 0.8);
   background-size: cover;
   width: 100vw;
   height: 100vh;

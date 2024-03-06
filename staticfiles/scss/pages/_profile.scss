@@ -1,17 +1,14 @@
 @use "../abstract/" as *;
 
 
-.profile-section{
+.generic-section{
   @include flexCenter(column);
   align-items: start;
   
 
   margin: 2rem;
 
-  .line{
-    width: 100%;
-    border: 1px solid rgb(71, 68, 68);
-  }
+  
  
 }
 

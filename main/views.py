@@ -1,9 +1,7 @@
 # views.py
-from datetime import timedelta
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import CustomUserCreationForm, UpdateCustomUserForm
 from django.contrib.auth import login, logout, authenticate
-from django.utils import timezone
 from .models import *
 from django.contrib import messages
 
@@ -115,3 +113,21 @@ def profile(request):
         return redirect('/user')
 
     return render(request, 'home/profile.html', {'form': form})
+
+
+def feedback(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            message = request.POST.get('message')
+
+            # Create a new Feedback instance with the retrieved message
+            new_feedback = Feedback(user=request.user, message=message)
+
+            # Save the new feedback instance to the database
+            new_feedback.save()
+
+            # Success message or redirect (optional)
+            # messages.success(request, 'Feedback submitted successfully!')  # Using Django messages framework
+            return redirect('home')  # Redirect to another page (e.g., home page)
+
+    return render(request, 'home/feedback.html')

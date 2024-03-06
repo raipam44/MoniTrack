@@ -26,6 +26,9 @@ MoniTrack | {{ user.last_name }} {% endif %} {% endblock %} {% block nav_bar %}
           <a class="nav-link active" href="#">Profile</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{% url 'feedback' %}">Feedback</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'log_out' %}">Log Out </a>
         </li>
       </ul>
@@ -53,7 +56,7 @@ MoniTrack | {{ user.last_name }} {% endif %} {% endblock %} {% block nav_bar %}
 {% endfor %}
 {% endif %}
 
-<section class="profile-section">
+<section class="generic-section">
   
   <div class="public-profile">
     <h1>Public Profile</h1>
@@ -120,10 +123,11 @@ MoniTrack | {{ user.last_name }} {% endif %} {% endblock %} {% block nav_bar %}
       
     </form>
     <div class="profile__img-wrapper">
-      <label for="profile-pic">Profile Picture</label>
-
+      
     {% if user.profile_pic %}
-      <img src="{{ user.profile_pic.url }}" alt="Profile Image" id="profile-pic" />
+     <label for="profile-pic">Profile Picture</label>
+
+       <img src="{{ user.profile_pic.url }}" alt="Profile Image" id="profile-pic" />
    
     {% endif %}
      
