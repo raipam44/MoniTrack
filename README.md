@@ -5,7 +5,7 @@
 > [!IMPORTANT]
 > Have a problem?
 > 
-> Find me on [Discord#syc_](https://discordapp.com/users/sysc_)
+> Find me on [Discord#rem.sysc](https://discordapp.com/users/rem.sysc)
 
 
 
