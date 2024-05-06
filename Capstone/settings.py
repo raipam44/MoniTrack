@@ -206,9 +206,11 @@ AUTO_LOGOUT = {
 
 if 'DATABASE_URL' in os.environ:
     DATABASES['default'] = dj_database_url.config(
+        default='postgresql://postgres:4C3gbbdBDac13d*d52E2GE534EfaCg1G@monorail.proxy.rlwy.net:23937/railway',
         conn_max_age=500,
         conn_health_checks=True,
     )
+    
 
 
 # if DEBUG == False:
