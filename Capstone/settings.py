@@ -155,14 +155,18 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # new
-    },
-}
+# STORAGES = {
+#     "default": {
+#         "BACKEND": "django.core.files.storage.FileSystemStorage",
+#     },
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # new
+#     },
+# }
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
