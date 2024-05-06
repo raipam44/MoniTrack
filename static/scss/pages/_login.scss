@@ -1,7 +1,7 @@
 @use '../abstract/' as *;
 
 .login-container{
-    padding-top: 1.5rem;
+    height: 100vh;
     @include flexCenter(column);
     .logo-text-login{
 
@@ -24,4 +24,10 @@
 .fade-out {
     opacity: 0;
     transition: opacity 1s ease-out; /* Adjust the duration and easing as needed */
+  }
+
+  .create-acc{
+    p{
+        margin-top: 2em;
+    }
   }

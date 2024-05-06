@@ -111,15 +111,15 @@ input::-webkit-inner-spin-button {
 }
 
 .home-container {
-  padding-top: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 .login-container {
-  padding-top: 1.5rem;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,12 +141,20 @@ input::-webkit-inner-spin-button {
   transition: opacity 1s ease-out; /* Adjust the duration and easing as needed */
 }
 
+.create-acc p {
+  margin-top: 2em;
+}
+
 .signup-container {
-  padding-top: 1.5rem;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+#signup-text {
+  margin-top: 2em;
 }
 
 .navbar .nav-logo {
@@ -154,33 +162,68 @@ input::-webkit-inner-spin-button {
 }
 
 .content-section {
-  margin-top: 2.8rem;
+  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 2rem;
+  padding: 1.5em;
 }
 .content-section legend {
   text-align: center;
 }
 .content-section .information-container {
+  margin-top: 5em;
+  width: 27em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 1.2em;
-  width: -moz-fit-content;
-  width: fit-content;
 }
-.content-section .form-control {
+.content-section .information-container .form-control {
   text-indent: 0.49em;
-  width: 17em;
-  border-radius: 0.3rem;
+  min-width: 10em;
+  max-width: 27em;
+  height: 2.7em;
+  border-radius: 1em;
+  border: 1px solid transparent;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.content-section .form-control:focus {
+.content-section .information-container .form-control:focus {
   border-color: rgba(5, 63, 24, 0.4039215686);
   box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+}
+
+.big-clock {
+  font-size: 50px; /* Adjust the font size as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5em;
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  border-radius: 1em;
+  padding: 0.4em;
+}
+
+.duration-label {
+  font-size: 24px;
+}
+
+.time {
+  display: flex;
+}
+
+.unit {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 18px;
 }
 
 .generic-section {
@@ -237,11 +280,21 @@ input::-webkit-inner-spin-button {
 }
 
 body {
-  background: url("../assets/blob-scatter-haikei.svg") no-repeat center center fixed, rgba(3, 3, 3, 0.8);
-  background-size: cover;
+  background: #0D2426;
   width: 100vw;
   height: 100vh;
   color: white;
+}
+
+.bot-logo {
+  max-width: 80px;
+  max-height: 80px;
+}
+.bot-logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .logo-text {

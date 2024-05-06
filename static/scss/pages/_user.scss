@@ -1,3 +1,5 @@
+//_user.scss
+
 @use '../abstract/' as *;
 
 
@@ -9,7 +11,7 @@
 
 
 .content-section {
-  margin-top: 2.8rem;
+  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
@@ -22,10 +24,52 @@
   }
 
   .information-container {
+    margin-top: 5em;
+    width: 27em;
     @include flexCenter(column);
     gap: 1.2em;
-    width: fit-content;
+
+    @include form-style;
+  
+   
+
   }
 
-  @include form-style;
+
+  padding: 1.5em;
+
 }
+
+
+
+.big-clock {
+  font-size: 50px; /* Adjust the font size as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: .5em;
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  border-radius: 1em;
+  padding: .4em;
+}
+
+.duration-label {
+  font-size: 24px;
+}
+
+.time {
+  display: flex;
+}
+
+.unit {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 18px;
+}
+
+

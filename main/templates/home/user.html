@@ -1,3 +1,5 @@
+<!-- user.html -->
+
 {% extends 'home/base.html' %} 
 {% block title %} 
     {% if user.is_authenticated %}
@@ -107,43 +109,55 @@
         value="Log In Time: {{ login_date|date:"H:i" }}" 
         />
       {% endif %}
-      <p id="stopwatch" class="form-control">Duration: 00:00:00</p>
-      <script>
-        // Get the initial duration from the server (in seconds)
-        const initialDuration = Number(
+      <div id="stopwatch" class="big-clock">
+        <div class="duration-label">Duration:</div>
+        <div class="time">
+            <div class="unit">
+                <div class="label">Hours:</div>
+                <div class="hour">00</div>
+            </div>
+            <div class="unit">
+                <div class="label">Minutes:</div>
+                <div class="minute">00</div>
+            </div>
+            <div class="unit">
+                <div class="label">Seconds:</div>
+                <div class="second">00</div>
+            </div>
+        </div>
+    </div>
+    <script>
+      // Get the initial duration from the server (in seconds)
+      const initialDuration = Number(
           "{{ user_session.duration.total_seconds|default:0 }}"
-        );
+      );
   
-        function updateStopwatch() {
+      function updateStopwatch() {
           const currentDuration =
-            initialDuration +
-            Math.floor(
+          initialDuration +
+          Math.floor(
               (Date.now() -
-                new Date(
+              new Date(
                   '{{ user_session.login_time|date:"Y-m-d\TH:i:sO" }}'
-                ).getTime()) /
-                1000
-            );
+              ).getTime()) /
+              1000
+          );
           const hours = Math.floor(currentDuration / 3600);
           const minutes = Math.floor((currentDuration % 3600) / 60);
           const seconds = currentDuration % 60;
   
           // Format the time and update the HTML element
-          const formattedTime = `${String(hours).padStart(2, "0")}:${String(
-            minutes
-          ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+          document.querySelector(".hour").textContent = String(hours).padStart(2, "0");
+          document.querySelector(".minute").textContent = String(minutes).padStart(2, "0");
+          document.querySelector(".second").textContent = String(seconds).padStart(2, "0");
+      }
   
-          document.getElementById(
-            "stopwatch"
-          ).innerText = `Duration: ${formattedTime}`;
-        }
+      // Update the stopwatch every second
+      setInterval(updateStopwatch, 1000);
   
-        // Update the stopwatch every second
-        setInterval(updateStopwatch, 1000);
-  
-        // Initial call to set the correct time on page load
-        updateStopwatch();
-      </script>
+      // Initial call to set the correct time on page load
+      updateStopwatch();
+  </script>
     </div>
   
   </section>

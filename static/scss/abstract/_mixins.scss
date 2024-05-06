@@ -6,18 +6,22 @@
 
 }
 
+@mixin form-style {
+  $min-width: 10em; // Set your desired minimum width
+  $max-width: 27em; // Set your desired maximum width
 
-@mixin form-style{
+  .form-control {
+    text-indent: 0.49em;
+    min-width: $min-width; // Minimum width
+    max-width: $max-width; // Maximum width
+    height: 2.7em;
+    border-radius: 1em;
+    border: 1px solid transparent;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-    .form-control {
-        text-indent: 0.49em;
-        width: clamp(15em, 17em, 25em);
-        border-radius: 0.3rem;
-      
-      }
-    
-      .form-control:focus {
-        border-color: #053f1867;
-        box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
-      }
+    &:focus {
+      border-color: #053f1867;
+      box-shadow: 0 0 0 0.2rem rgba(4, 247, 105, 0.25);
+    }
+  }
 }

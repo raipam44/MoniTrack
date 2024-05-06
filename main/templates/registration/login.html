@@ -8,7 +8,15 @@
 
 
 <div class="login-container">
+
+  <div class="bot-logo">
+    {% load static %}
+    <img src="{% static '/assets/bot_login.png' %}" alt="">
+  </div>
+
   <a href=" {% url 'home' %}"><h1 class="logo-text logo-text-login">MoniTrack</h1></a>
+
+ 
 
   <form method='POST' action="{% url 'log_in' %}" class="row g-7" id="login-form">
     {% csrf_token %} 
@@ -24,7 +32,12 @@
 
    
 
-    <button type="submit" class="btn btn-primary" >Log in</button>
+   
+
+    <div class="create-acc">
+      <button type="submit" class="btn btn-primary" >Log in</button>
+      <p>Don't have an account? <a href=" {% url 'sign_up' %}"> Create an account here!</a></p>
+    </div>
   </form>
 
 

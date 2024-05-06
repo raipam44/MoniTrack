@@ -1,4 +1,6 @@
-{% extends 'home/base.html' %} {% block content %}
+{% extends 'home/base.html' %}
+
+{% block content %}
 <!-- <img
   class="img-fluid"
   src="/assets/MoniTrack Logo.png"
@@ -24,6 +26,12 @@
     </div>
   {% endfor %}
   {% endif %}
+
+  <div class="bot-logo">
+    {% load static %}
+    <img src="{% static '/assets/bot_home.png' %}" alt="">
+  </div>
+
   <a href="{% url 'home' %}"><h1 class="logo-text">MoniTrack</h1></a>
   
   <div class="tagline">

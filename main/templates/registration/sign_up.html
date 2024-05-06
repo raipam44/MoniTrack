@@ -4,6 +4,11 @@
 {% endblock %} 
 {% block content %}
   <div class="container signup-container">
+    <div class="bot-logo">
+      {% load static %}
+      <img src="{% static '/assets/bot_signup.png' %}" alt="">
+    </div>
+  
           <a href=" {% url 'home' %}"><h1 class="logo-text logo-text-login">MoniTrack</h1></a>
           <form
             class="row g-7 w-50"
@@ -115,8 +120,10 @@
               </div>
             {% endif %}
           </div>
-            <div class="col-12 mt-4">
+            <div>
               <button type="submit" class="btn btn-primary">Sign Up</button>
+              <p id="signup-text">Already have an account?  <a href="{% url 'log_in'%}"> Log in here!</a></p>
+
             </div>
           </form>
 
