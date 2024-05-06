@@ -1,0 +1,14 @@
+@use '../abstract/' as *;
+
+.signup-container {
+
+  height: 100vh;
+  @include flexCenter(column);
+ 
+}
+
+
+#signup-text{
+
+  margin-top: 2em;
+}
