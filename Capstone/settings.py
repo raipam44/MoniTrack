@@ -33,11 +33,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_urlsafe(64))
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-
-
-
-DEBUG = False
-
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['monitrack-production.up.railway.app', '127.0.0.1']
@@ -70,8 +66,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # 'main.middleware.SessionTimeoutMiddleware',
-    'django_auto_logout.middleware.auto_logout', #django auto log out
-    
+    'django_auto_logout.middleware.auto_logout',  # django auto log out
+
 ]
 
 ROOT_URLCONF = 'Capstone.urls'
@@ -160,10 +156,8 @@ STORAGES = {
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 
-
-
 MEDIA_URL = '/images/'
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -187,7 +181,6 @@ STATICFILES_FINDERS = [
 # Example subdirectory for compressed files
 
 
-
 # mimetypes.add_type("text/css", ".css", True)
 
 
@@ -199,16 +192,12 @@ SESSION_COOKIE_SECURE = True
 # SESSION_SAVE_EVERY_REQUEST = True
 
 
-
 AUTO_LOGOUT = {
     'IDLE_TIME': 5700,
     'SESSION_TIME': timedelta(hours=4),
     'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
     'MESSAGE': 'The session has expired. Please login again to continue.',
 }
-
-
-
 
 
 # Update database configuration from $DATABASE_URL environment variable (if defined)
