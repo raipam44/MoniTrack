@@ -2,7 +2,13 @@
 
 .signup-container {
 
-  padding-top: 1.5rem;
+  height: 100vh;
   @include flexCenter(column);
  
+}
+
+
+#signup-text{
+
+  margin-top: 2em;
 }
