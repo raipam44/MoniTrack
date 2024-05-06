@@ -36,9 +36,11 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_urlsafe(64))
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['monitrack-production.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['monitrack-production.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://monitrack-production.up.railway.app']
 CSRF_COOKIE_SECURE = True
+
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 
 # Application definition
