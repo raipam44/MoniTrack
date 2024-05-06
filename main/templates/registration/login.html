@@ -1,4 +1,6 @@
 {% extends 'home/base.html' %}
+{% load static %}
+
 {% block title %} 
   MoniTrack | Log In
 {% endblock %} 
@@ -10,7 +12,6 @@
 <div class="login-container">
 
   <div class="bot-logo">
-    {% load static %}
     <img src="{% static '/assets/bot_login.png' %}" alt="">
   </div>
 

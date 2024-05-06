@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_urlsafe(64))
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['monitrack-production.up.railway.app', '127.0.0.1']
@@ -58,8 +58,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",  # new
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
