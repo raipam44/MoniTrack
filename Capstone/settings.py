@@ -31,7 +31,15 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', secrets.token_urlsafe(64))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+
+
+
+
 DEBUG = False
+
+
+
 ALLOWED_HOSTS = ['monitrack-production.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://monitrack-production.up.railway.app']
 CSRF_COOKIE_SECURE = True
@@ -138,8 +146,8 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
