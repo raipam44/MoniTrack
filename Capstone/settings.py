@@ -212,7 +212,7 @@ if 'DATABASE_URL' in os.environ:
     )
 
 
-if DEBUG == False:
+
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
     SECURE_HSTS_SECONDS = 604800
