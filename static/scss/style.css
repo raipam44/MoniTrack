@@ -248,7 +248,8 @@ input::-webkit-inner-spin-button {
   gap: 2rem;
 }
 .profile-container .profile-form__inputs {
-  height: 1.99rem;
+  height: 2.6rem;
+  border-radius: 0.9em;
 }
 
 .profile__img-wrapper {
@@ -318,5 +319,5 @@ body {
 
 .line {
   width: 100%;
-  border: 1px solid rgb(71, 68, 68);
+  border: 1px solid #028ce7;
 }

@@ -4,4 +4,4 @@
 # Database
 *.sqlite3
 
-mysite.log
+*.log
