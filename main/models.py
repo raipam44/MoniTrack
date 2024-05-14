@@ -51,6 +51,8 @@ class UserRecord(models.Model):
         previous_section = models.CharField(max_length=3, blank = True)
         previous_first_name = models.CharField( max_length=50, blank = True)
         previous_last_name = models.CharField( max_length=50, blank = True)
+        def __str__(self):
+            return f"{self.user.last_name} ({self.user.section})" 
 
 
 class Feedback(models.Model):
