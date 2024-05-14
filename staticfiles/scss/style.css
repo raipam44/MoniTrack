@@ -147,6 +147,7 @@ input::-webkit-inner-spin-button {
 
 .signup-container {
   height: 100vh;
+  margin-top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
