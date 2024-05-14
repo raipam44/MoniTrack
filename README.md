@@ -1,4 +1,4 @@
- # A Capstone project. This website is intented for educational purposes only.
+# A Capstone project. This website is intented for educational purposes only.
 >   
 研究が嫌い!!
 
@@ -16,7 +16,10 @@
 
 >
 **Home Page**
-![Screenshots#1](https://media.discordapp.net/attachments/856019159899832350/1213382651441053706/image.png?ex=65f545a7&is=65e2d0a7&hm=a4b0d2a9ac08222bf61720b47868dd90251181fb1302c944391add614c0834b9&=&format=webp&quality=lossless&width=956&height=468)
+![Screenshots#1](https://64.media.tumblr.com/e748cd322ddec4b0173a5c99011ab34d/2031e8da1b586bcc-fc/s2048x3072/cf0e739d84cba11b79039d057354b5ac5f453ef4.pnj)
 
 **Log In Page**
-![Screenshots#2](https://media.discordapp.net/attachments/856019159899832350/1213388089154609175/image.png?ex=65f54ab8&is=65e2d5b8&hm=08d50466e6851ac313bb1002fd2deff948ee89bab233ad05dd0ff7e4ad84d208&=&format=webp&quality=lossless&width=960&height=468)
+![Screenshots#2](https://64.media.tumblr.com/50188eaa409880d846771fc389f2870f/2031e8da1b586bcc-50/s2048x3072/7a8bf7974c8355b03fd47c680fd117b8ec6a8ce5.pnj)
+
+**Sign Up Page**
+![Screenshots#2](https://64.media.tumblr.com/9b9beb8d54791e8d214ebb7fc9c411b2/2031e8da1b586bcc-ce/s2048x3072/aecd15075b2e26a2c206837d78361035cfdd13db.pnj)
